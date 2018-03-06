@@ -1,6 +1,6 @@
 <template>
 	<div class="bppWarp" >
-		<Header :incl='incl' @target='target'/>	
+		<Header @gitcitydata="getcitydata" :incl='incl' @target='target'/>	
 			<router-view />
 			
 		<footer>
@@ -37,20 +37,24 @@ export default {
 
 			},
 			incl:"分类",
+			citydata:[]
 
 		
 		})
 	},
 	methods:{
 		target(val){
-				console.log(val)
 				if(val === '分类'){
 					this.$router.push({path:"/classify",query:{name:"index"}})
 				}
+			},
+		getcitydata(val){
+				this.citydata = val
+				console.log(this.citydata)
 			}
-
 	}
 }
+
 
 </script>
 
@@ -120,8 +124,7 @@ export default {
 	    font-size: 5vw;
 	}*/
 	footer{
-		height: 13.07vw;
-		border-top:0.14vw solid red;
+		height: 13.5vw;
 	}
 	footer>ul{
 		display: flex;
