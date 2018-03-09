@@ -60,12 +60,8 @@ export default {
 
 
 
-<style>
-	.bppWarp{
-		height: 100%;
-		 display: flex;
-	  	flex-direction: column;
-	}
+<style scoped >
+	
 	/* header{
 		height: 11.73vw;
 		background-color: #1b1818;
@@ -123,28 +119,6 @@ export default {
 	    margin-right: 3vw;
 	    font-size: 5vw;
 	}*/
-	footer{
-		height: 13.5vw;
-	}
-	footer>ul{
-		display: flex;
-		justify-content: space-around;
 	
-	}
-	footer>ul>li{
-		line-height: 13.5vw;
-		width: 20%;
-	}
-	footer>ul>li>a{
-		color: black;
-		display: block;
-		width: 100%;
-		color: #bbb;
-	
-	
-	}
-	footer>ul>li>a>i{
-		font-size: 6.5vw;
-			} 
 
 </style>

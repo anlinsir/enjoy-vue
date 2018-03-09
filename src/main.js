@@ -6,10 +6,12 @@ import router from './router'
 import ElementUI from 'element-ui'
 import  'element-ui/lib/theme-chalk/index.css'
 import store from './vuex'
-
+import Carousel3d from 'vue-carousel-3d';
+import '@/base/cssBase.css'
+import '@/fontvue/iconfont.css'
 
 Vue.use(ElementUI);
-
+Vue.use(Carousel3d);
 
 Vue.config.productionTip = false
 
