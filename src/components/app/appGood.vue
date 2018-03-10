@@ -2,8 +2,12 @@
 	<div class="appIndex">
 		appgood.vue
 
-		
-	</div>
+		<div class="test">
+			<p>yes</p>
+		</div>
+
+
+		</div>
 </template>
 
 
@@ -14,11 +18,17 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.appIndex{
 		flex: 1;
 		height: 50vw;
 	}
+	.test{
+		p{
+			color: red;
+		}
+	}
+
 
 
 </style>

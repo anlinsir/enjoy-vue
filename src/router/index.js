@@ -11,6 +11,11 @@ const Classify = r =>require.ensure([],() => r(require('@/pages/classify.vue')),
 const Login = r =>require.ensure([],() => r(require('@/pages/Login.vue')),'Login')
 
 
+/*admin*/
+const Admin = r =>require.ensure([],() => r(require('@/pages/admin.vue')),'admin')
+
+
+
 
 
 
@@ -46,6 +51,11 @@ export default new Router({
         path:'/login',
         name:"login",
         component:Login
+      },
+      {
+        path:'/admin',
+        name:"admin",
+        component:Admin
       },
         
 
