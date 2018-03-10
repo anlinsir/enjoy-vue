@@ -21,8 +21,21 @@
 		  </div>
 		  <!-- choose commodity -->
 		  <div>
-			<div class="chooseCommodity">
-				
+			<div class="chooseCommodity" v-for="(item,index) in chooseCommodity">
+				<div class="CommodityFlex" >
+				<h3>{{item.title}}</h3>
+				<a href="#">{{item.more}}</a>
+				</div>
+
+				<div class="desc">{{item.desc}}</div>
+
+				<ul>
+					<li v-for="img in item.img">
+							<img :src="img">
+					</li>
+
+				</ul>
+
 			</div>
 		</div>
 	</div>
@@ -37,7 +50,29 @@ export default {
 		return({
 			CarouselNum:4,
 			CarouselGetNum:0,
-			CarouselItem:null
+			CarouselItem:null,
+			chooseCommodity:[
+				{
+					title:"优选美酒",
+					more:"查看更多",
+					desc:"本周上架10款精品，10款新品",
+					img:['https://image.ricebook.com/business/20298057023194?imageView2/1/w/210/h/210','https://image.ricebook.com/business/1498617437340002?imageView2/1/w/210/h/210','https://image.ricebook.com/business/20315504823398?imageView2/1/w/210/h/210']
+				},
+				{
+					title:"优选美酒",
+					more:"查看更多",
+					desc:"本周上架10款精品，10款新品",
+					img:['https://image.ricebook.com/business/20298057023194?imageView2/1/w/210/h/210','https://image.ricebook.com/business/1498617437340002?imageView2/1/w/210/h/210','https://image.ricebook.com/business/20315504823398?imageView2/1/w/210/h/210']
+				},
+				{
+					title:"优选美酒",
+					more:"查看更多",
+					desc:"本周上架10款精品，10款新品",
+					img:['https://image.ricebook.com/business/20298057023194?imageView2/1/w/210/h/210','https://image.ricebook.com/business/1498617437340002?imageView2/1/w/210/h/210','https://image.ricebook.com/business/20315504823398?imageView2/1/w/210/h/210']
+				}
+			]
+
+
 		})
 	},
 	beforeCreate(){
@@ -62,10 +97,11 @@ export default {
 
 </script>
 
-<style scoped>
+<style  scoped>
 	.appIndex{
 		flex: 1;
 		height: 50vw;
+		overflow: auto;
 	}
 .demonstration{
 	text-align: left;
@@ -124,13 +160,47 @@ export default {
 
   }
   .chooseCommodity{
-  	width: 100%;
+  	width: 90%;
   	min-height: 30vw;
-  	border:1px solid red;
+  	border-bottom:1px solid red;
   	box-sizing: border-box;
-  	padding: 0 5.33vw;
+  	padding: 8vw 0;
+  	margin-left:5.33vw;
+  	margin-right:5.33vw;
   }
-
+  .chooseCommodity>.CommodityFlex{
+  	display: flex;
+  	justify-content: space-between;
+  }
+  .chooseCommodity>.CommodityFlex>a{
+  	font-size: 4vw;
+  	color: #ff3939;
+  }
+  >.CommodityFlex>h3{
+  		font-weight: bolder;
+    color: #2c3038;
+      font-size: 5.6vw;
+  }
+    
+  .chooseCommodity>.desc{
+    color: #92969c;
+    font-size: 2.93vw;
+    margin-top: 1.33vw;
+    text-align: left;
+}
+	.chooseCommodity>ul{
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+	}
+	.chooseCommodity>ul>li{
+		width: 28vw;
+		height: 28vw;
+	}
+	.chooseCommodity>ul>li>img{
+		width: 100%;
+		height: 100%;
+	}
 
 </style>
 

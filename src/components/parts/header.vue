@@ -4,7 +4,14 @@
 				<li @click="target">{{incl}}</li>
 				<li @click="showSelectCity"><span>{{chooseCity}}</span></li>
 			
-				<li @click.self="login">登录 <i class="el-icon-search" @click="showSearch"></i></li>
+				<li @click.self="login">{{user||"登录"}} <i tabindex="1" class="el-icon-search" @click="showSearch"></i>
+					<ul v-show="logoutShow" class="logoutBtn">
+						<li>我的订单</li>
+						<li>我的礼券</li>
+						<li>退出</li>
+
+					</ul>
+				</li>
 
 			</ul>
 			<!-- 搜索键 -->
@@ -44,7 +51,9 @@ import axios from 'axios'
 				showcitys:false,
 				citys:[],
 				chooseCity:'北京',
-				showproducts:[]
+				showproducts:[],
+				user:"",
+				logoutShow:false
 			})
 		},
 		props:{
@@ -59,6 +68,15 @@ import axios from 'axios'
 					this.$emit('gitcitydata',this.showproducts)
 
 				})
+		},
+		created(){
+			if(location.href.indexOf('?') != -1){
+				location.href.split('?')[1].split('&').forEach((item,index)=>{
+						if(item.split('=')[0] == 'user'	){
+							this.user = item.split('=')[1]
+						}
+				})
+			}
 		}
 		,
 		mounted(){
@@ -85,8 +103,17 @@ import axios from 'axios'
 				this.$emit('target',e.target.innerHTML)
 			},
 			login(){
-				this.$router.push({path:"/login"})
+				if(!this.user){
+					this.$router.push({path:"/login"})
+				}
+				if(this.logoutShow){
+					this.logoutShow = false
+				}else if(!this.logoutShow){
+					this.logoutShow = true	
+				}
+				
 			},
+			
 			getCity(e){
 				console.log(e.target.innerText)
 				this.chooseCity = e.target.innerText
@@ -98,7 +125,35 @@ import axios from 'axios'
 </script>
 
 <style>
-	
+	.logoutBtn{
+		position: absolute;
+		top: 11.73vw;
+		right: 4vw;
+		width: 30%;
+		background-color: #fff;
+		color: black;
+		font-size: 4vw;
+		box-shadow: 0.1vw 0.1vw 5.1vw -0.9vw ;
+	}
+	.logoutBtn:after{
+		    content: "";
+    border: 4.6vw solid #fff;
+    border-top: 0.6vw solid transparent;
+    border-left: 3.8vw solid transparent;
+    border-right: 3.8vw solid transparent;
+    width: 0;
+    height: 0;
+    display: block;
+    position: absolute;
+    right: 14vw;
+    top: -3vw;
+	}
+	.logoutBtn>li{
+		text-align: center;
+	}
+	.logoutBtn>li:hover{
+		margin-left:3vw;
+	}
 	
 
 
