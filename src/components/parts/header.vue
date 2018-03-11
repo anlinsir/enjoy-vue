@@ -8,7 +8,7 @@
 					<ul v-show="logoutShow" class="logoutBtn">
 						<li>我的订单</li>
 						<li>我的礼券</li>
-						<li>退出</li>
+						<li @click="logout">退出</li>
 
 					</ul>
 				</li>
@@ -24,7 +24,7 @@
 				<p :style="{color:'#1a1a1a',textAlign:'left',marginLeft:'4vw',marginTop:'8vw',marginBottom:'3vw'}" :data-id='-1'>本地服务开通城市</p>
 				<ul class="displayCity">
 					
-					<li @click.self="getCity" :data-id="index"  v-for="(city,index) in citys" :style="{color:'#1a1a1a'}">
+					<li  @click.self="getCity" :data-id="index"  v-for="(city,index) in citys" :style="{color:'#1a1a1a'}">
 						{{city}}
 					</li>
 				</ul>
@@ -74,6 +74,7 @@ import axios from 'axios'
 				location.href.split('?')[1].split('&').forEach((item,index)=>{
 						if(item.split('=')[0] == 'user'	){
 							this.user = item.split('=')[1]
+							this.$emit('getuser',this.user)
 						}
 				})
 			}
@@ -105,6 +106,7 @@ import axios from 'axios'
 			login(){
 				if(!this.user){
 					this.$router.push({path:"/login"})
+					return
 				}
 				if(this.logoutShow){
 					this.logoutShow = false
@@ -118,8 +120,15 @@ import axios from 'axios'
 				console.log(e.target.innerText)
 				this.chooseCity = e.target.innerText
 				this.showcitys = false
-			}
-				
+			},
+			logout(){
+				console.log('logout')
+				this.user = ''
+				this.logoutShow	 = false
+				this.$emit('getuser',this.user)
+
+				this.$router.push({path:`/index`})
+			},
 		}
 	}
 </script>

@@ -59,7 +59,7 @@ export default{
             getFindCarousel(){
 
                 var pro = {
-                    img:'https://image.ricebook.com/business/23106011723033?imageView2/2/w/670' ,
+                    img:'https://image.ricebook.com/business/23175261623972?imageView2/2/w/670' ,
                     text1:"超级星期五",
                     text2:'满450减45元 满180减15元！春天里，约会你',
                     text3:'一览蓉城春景的星级酒店、浪漫满分的精致西餐厅......白色情人节特辑'

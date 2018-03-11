@@ -34,6 +34,7 @@
 		height: 94%;
 		position: absolute;
 		background-color: #fff;
+		z-index: 9999;
 	}
 	.displayCity{
 		display: flex;
@@ -58,7 +59,10 @@
 
 
 
-
+.appIndex{
+		flex: 1;
+		height: 50vw;
+	}
 
 
 
@@ -71,6 +75,7 @@
 		justify-content: space-between;
 		background-color: #fff;
 		width: 100%;
+		z-index: 999;
 	}
 	.showSearch>p{
 		color: black;
@@ -133,6 +138,7 @@
 		-webkit-background-size: 50%;
 		background-size: 50%;
 		position: relative;
+
 	}
 	header>ul>li:nth-child(2)>span{
 		position: absolute;

@@ -1,6 +1,6 @@
 <template>
 	<div class="bppWarp" >
-		<Header @gitcitydata="getcitydata" :incl='incl' @target='target'/>	
+		<Header @getuser='getuser' @gitcitydata="getcitydata" :incl='incl' @target='target'/>	
 			<router-view />
 			
 		<footer>
@@ -8,6 +8,7 @@
 				<li v-for='(val,key,index) in indexRouter'>
 					<router-link :to="key"><i :class="val"></i></router-link>
 				</li>
+				<li><router-link :to="user?`/my/${user}`:'/login'"><i class="el-icon-news"></i></router-link></li>
 				
 
 			</ul>
@@ -33,11 +34,12 @@ export default {
 				'index':'el-icon-news',
 				'find':'el-icon-view',
 				'good':'el-icon-goods',
-				'my':'el-icon-star-off'
+				
 
 			},
 			incl:"分类",
-			citydata:[]
+			citydata:[],
+			user:""
 
 		
 		})
@@ -51,7 +53,11 @@ export default {
 		getcitydata(val){
 				this.citydata = val
 				console.log(this.citydata)
-			}
+			},
+		getuser(val){//这里没有query的user时 就不会执行
+			this.user = val
+			console.log(this.user)
+		}
 	}
 }
 

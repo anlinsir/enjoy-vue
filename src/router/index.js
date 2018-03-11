@@ -9,7 +9,8 @@ const BppMy = r =>require.ensure([],() => r(require('@/components/app/appMy.vue'
 const Classify = r =>require.ensure([],() => r(require('@/pages/classify.vue')),'classify')
 /***************/
 const Login = r =>require.ensure([],() => r(require('@/pages/Login.vue')),'Login')
-
+/************************************/
+const Search = r =>require.ensure([],() => r(require('@/pages/search.vue')),'search')
 
 /*admin*/
 const Admin = r =>require.ensure([],() => r(require('@/pages/admin.vue')),'admin')
@@ -25,6 +26,8 @@ const Admin = r =>require.ensure([],() => r(require('@/pages/admin.vue')),'admin
 Vue.use(Router)
 
 export default new Router({
+  mode:"history"
+  ,
   routes: [
   		{
   			path:"/index",
@@ -36,7 +39,6 @@ export default new Router({
         {path:'/index/find',component:BppFind}
         ,
         {path:'/index/good',component:BppGood},
-        {path:'/index/my',component:BppMy}
 
 
         ],
@@ -56,6 +58,13 @@ export default new Router({
         path:'/admin',
         name:"admin",
         component:Admin
+      },
+        {path:'/my/:user',component:BppMy}
+      ,
+      {
+        path:'/search',
+        name:"search",
+        component:Search
       },
         
 
