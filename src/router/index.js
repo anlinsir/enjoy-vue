@@ -11,6 +11,8 @@ const Classify = r =>require.ensure([],() => r(require('@/pages/classify.vue')),
 const Login = r =>require.ensure([],() => r(require('@/pages/Login.vue')),'Login')
 /************************************/
 const Search = r =>require.ensure([],() => r(require('@/pages/search.vue')),'search')
+/*****************/
+const Details = r =>require.ensure([],() => r(require('@/pages/details.vue')),'details')
 
 /*admin*/
 const Admin = r =>require.ensure([],() => r(require('@/pages/admin.vue')),'admin')
@@ -66,6 +68,12 @@ export default new Router({
         name:"search",
         component:Search
       },
+      {
+        path:'/details/:Id',
+        name:"details",
+        component:Details
+      },
+
         
 
 

@@ -50,7 +50,7 @@ import axios from 'axios'
 				showSearchs:false,
 				showcitys:false,
 				citys:[],
-				chooseCity:'北京',
+				chooseCity:'成都',
 				showproducts:[],
 				user:"",
 				logoutShow:false

@@ -1,20 +1,23 @@
 <template>
 	<div class="appIndex">
 		<ul class="indexUl">			
-			<li class="productItemMain" v-for='item in showproducts'>
-			<!-- <div class="productItemHeader" v-for='item in showproducts' v-if="item.header">
-				<p class="productItemHeaderTitle">{{item.header.title}}</p>
-				<p class="productItemHeaderDesc">{{item.header.desc}}</p>
+			<li  :data-id="item.id" class="productItemMain" v-for='(item,index) in showproducts'>
+			 <div class="productItemHeader">
+				<p class="productItemHeaderTitle">{{item.group_section.title}}</p>
+				<p class="productItemHeaderDesc">{{item.group_section.desc}}</p>
 			
-			</div> -->
-				<a href="#">
-					<img :src="item.url">
-					<p class="productItemTitle">{{item.title}}</p>
-					<p class="productItemDesc">{{item.desc}}</p>
+			</div>
+				<div @click="getDetails(items.enjoy_url)" class="newa" v-for="(items,index) in item.tabs">
+				<a  href="#">
+					<img :src="items.url">
+					<p class="productItemTitle">{{items.desc}}</p>
+					<p class="productItemDesc">{{items.title}}</p>
 
 				</a>
+				</div>
 			</li>
 		</ul>
+		
 
 		
 	</div>
@@ -41,9 +44,15 @@ export default {
 		axios.post('/api/initdata')
 				.then((res)=>{
 					this.showproducts = res.data.msg
-					console.log(this.showproducts)
 
 				})
+	},
+	methods:{
+		getDetails(id){
+			var Id = id.split('?')[1].split('&')[0].split('=')[1]
+			 this.$router.push(`/details/${Id}`)
+
+		}
 	}
 
 }
@@ -76,19 +85,19 @@ export default {
 		padding-bottom: 5vw;
 		box-sizing: border-box;		
 	}
-	.indexUl>li>a{
-
+	.indexUl>li>.newa{
+		margin-bottom: 10vw;
 	}
-	.indexUl>li>a>img{
+	.indexUl>li>.newa>a>img{
 		width: 89.33vw;
 		height: 59.46vw;
 	}
-	.indexUl>li>a>.productItemTitle{
+	.indexUl>li>.newa>a>.productItemTitle{
 		font-size: 4.26vw;
 		color: #2c3038;
 		margin-top:2vw; 
 	}
-	.indexUl>li>a>.productItemDesc{
+	.indexUl>li>.newa>a>.productItemDesc{
 		color: #92969c;
 
 		margin-top:.5vw; 
@@ -103,6 +112,7 @@ export default {
 	.productItemHeaderDesc{
 	    font-size: 2.6vw;
 	    color: #ff3939;
+	    margin-bottom: 5vw;
 
 	}
 
