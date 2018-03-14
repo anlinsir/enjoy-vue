@@ -4,7 +4,7 @@
 				<li @click="target">{{incl}}</li>
 				<li @click="showSelectCity"><span>{{chooseCity}}</span></li>
 			
-				<li @click.self="login">{{user||"登录"}} <i tabindex="1" class="el-icon-search" @click="showSearch"></i>
+				<li @click.self="login">{{user?decodeURI(user):'登录'}}<i tabindex="1" class="el-icon-search" @click="showSearch"></i>
 					<ul v-show="logoutShow" class="logoutBtn">
 						<li>我的订单</li>
 						<li>我的礼券</li>
@@ -36,15 +36,17 @@
 			
 
 		</header>	
-
+	
 
 </template>
 
 
 <script>
 import axios from 'axios'
+    import {mapState,mapGetters,mapMutations} from 'vuex'
 
 	export default {
+	
 		data(){
 			return({
 				showSearchs:false,
@@ -52,7 +54,7 @@ import axios from 'axios'
 				citys:[],
 				chooseCity:'成都',
 				showproducts:[],
-				user:"",
+				user:localStorage.user,
 				logoutShow:false
 			})
 		},
@@ -68,6 +70,7 @@ import axios from 'axios'
 					this.$emit('gitcitydata',this.showproducts)
 
 				})
+			//console.log(decodeURI(localStorage.user))
 		},
 		created(){
 			if(location.href.indexOf('?') != -1){
@@ -85,14 +88,17 @@ import axios from 'axios'
 		},
 		methods:{
 			showSelectCity(){
-				this.showcitys = !this.showcitys
-				// 获得城市信息
-				if(this.showcitys){
-					axios.post('/api/headercity')
-						.then((res)=>{
-							this.citys = res.data.message
-						})
+				if(location.pathname == '/index/index'){
+					this.showcitys = !this.showcitys
+					// 获得城市信息
+					if(this.showcitys){
+						axios.post('/api/headercity')
+							.then((res)=>{
+								this.citys = res.data.message
+							})
+					}	
 				}
+				
 
 
 			},
@@ -126,8 +132,8 @@ import axios from 'axios'
 				this.user = ''
 				this.logoutShow	 = false
 				this.$emit('getuser',this.user)
-
 				this.$router.push({path:`/index`})
+				localStorage.removeItem("user")
 			},
 		}
 	}
@@ -143,6 +149,7 @@ import axios from 'axios'
 		color: black;
 		font-size: 4vw;
 		box-shadow: 0.1vw 0.1vw 5.1vw -0.9vw ;
+		z-index: 1000;
 	}
 	.logoutBtn:after{
 		    content: "";

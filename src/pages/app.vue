@@ -8,6 +8,8 @@
 				<li v-for='(val,key,index) in indexRouter'>
 					<router-link :to="key"><i :class="val"></i></router-link>
 				</li>
+				<li><router-link :to="'/good'"><i class="el-icon-goods"></i></router-link></li>
+
 				<li><router-link :to="user?`/my/${user}`:'/login'"><i class="el-icon-news"></i></router-link></li>
 				
 
@@ -33,13 +35,12 @@ export default {
 			indexRouter:{
 				'index':'el-icon-news',
 				'find':'el-icon-view',
-				'good':'el-icon-goods',
-				
+								
 
 			},
 			incl:"分类",
 			citydata:[],
-			user:""
+			user:localStorage.user
 
 		
 		})

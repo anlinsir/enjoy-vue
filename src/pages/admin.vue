@@ -8,11 +8,10 @@
             <br>
             <br>
         <button @click="getFindCarousel">getFindCarousel</button>
-
+                <br>
+                            <br>
             <br>
-            <br>
-            <br>
-        <button @click='savedetails'>savwdetails</button>
+        <button @click='savedetails'>savwdetails{{msg}}</button>
 
 
 	</div>
@@ -23,8 +22,19 @@
 
 <script>
 import axios from 'axios'
+    import {mapState,mapGetters,mapMutations} from 'vuex'
 
 export default{
+   computed:{
+           
+            ...mapState({
+                msg:(state)=>state.user.msg
+                
+
+            })
+        }
+    ,
+
 	methods:{
 		
 		getcitydatas(){
@@ -248,37 +258,33 @@ export default{
             "data":{
                 "restaurants":[
                     {
-                        "area_id":2379,
-                        "area_name":"科华北路",
+                        "area_id":2367,
+                        "area_name":"春熙路",
                         "city_id":0,
-                        "enjoy_url":"enjoyapp://restaurant/profile?id=11669424",
-                        "latitude":30.61199951171875,
+                        "enjoy_url":"enjoyapp://restaurant/profile?id=428241",
+                        "latitude":30.64797592163086,
                         "license":{
-                            "enjoy_url":"https://topic.ricebook.com/topicpage/product_licence.html?restaurant_id=11669424",
+                            "enjoy_url":"https://topic.ricebook.com/topicpage/product_licence.html?restaurant_id=428241",
                             "icon":"https://image.ricebook.com/business/18915887513738",
                             "text":"营业许可资质"
                         },
-                        "longitude":104.08351135253906,
+                        "longitude":104.0887451171875,
                         "price_number":0,
-                        "restaurant_address":"武侯区长荣路56号1栋5号楼",
-                        "restaurant_id":11669424,
+                        "restaurant_address":"锦江区东大街芷泉段231号东方广场假日酒店一楼大堂",
+                        "restaurant_id":428241,
                         "restaurant_image":[
                             {
-                                "img_url":"https://image.ricebook.com/business/18137675013766",
+                                "img_url":"https://image.ricebook.com/business/16256675213179",
                                 "special_show":false
                             },
                             {
-                                "img_url":"https://image.ricebook.com/business/18137675013058",
-                                "special_show":false
-                            },
-                            {
-                                "img_url":"https://image.ricebook.com/business/18137675013380",
+                                "img_url":"https://image.ricebook.com/business/16256675213330",
                                 "special_show":false
                             }
                         ],
-                        "restaurant_name":"朴田海鲜火锅（泛悦国际店）",
+                        "restaurant_name":"东方广场假日酒店·蜀咖啡",
                         "restaurant_phone_numbers":[
-                            "028-69868710"
+                            "028-61303751"
                         ],
                         "state":0
                     }
@@ -293,23 +299,19 @@ export default{
                 "policy":"ignore"
             },
             "data":{
-                "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJzdWJQcm9kdWN0SWQlMjIlM0E1MDI5NzA1JTJDJTIyc291cmNlJTIyJTNBJTIycHJvZHVjdCUyMiUyQyUyMnRleHQlMjIlM0ElMjIlRTUlQkUlODglRTYlQTMlOTIlRTUlOTYlOTQlRUYlQkMlOEMlRTYlQUYlOEYlRTYlQUMlQTElRTklODMlQkQlRTglQjYlODUlRTclQjQlOUElRTYlODQlOUIlRTUlOTAlODMlRTQlQkIlOTYlRTUlQUUlQjYlRTclOUElODQlRTYlQjUlQjclRTklQUUlQUUlRUYlQkMlOEMlRTclODklQjklRTUlODglQTUlRTYlOTYlQjAlRTklQUUlQUUlRUYlQkMlODElRTUlQjAlQjElRTYlOTglQUYlRTYlOEUlOTIlRTQlQkQlOEQlRTYlOUMlODklRTklQkIlOUUlRTglOTElOTclRTYlODAlQTUlRUYlQkMlODElMjIlMkMlMjJpZCUyMiUzQTE1MDUxNDQ2MjE0MDAwMDIlMkMlMjJyZXN0YXVyYW50SWQlMjIlM0ExMTY2OTQyNCUyQyUyMmVuam95VXJsJTIyJTNBJTIyZW5qb3lhcHAlM0ElMkYlMkZwcm9kdWN0JTJGZmVlZGJhY2slMkZsaXN0JTNGcHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlN0Q=",
-                "avatar":"https://image.ricebook.com/business/22268467623067",
-                "create_time":1505144621000,
-                "enjoy_url":"enjoyapp://product/feedback/list?product_id=1015585",
-                "id":1505144621400002,
+                "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJzdWJQcm9kdWN0SWQlMjIlM0E1MDgyOTgwJTJDJTIyc291cmNlJTIyJTNBJTIycHJvZHVjdCUyMiUyQyUyMnRleHQlMjIlM0ElMjIlRTQlQjglQkElRTQlQkElODYlRTclODUlQTclRTklQTElQkUlRTglODAlODElRTQlQjglQUQlRTklOUQlOTIlRUYlQkMlOEMlRTklODAlODklRTYlOUQlQTUlRTklODAlODklRTUlOEUlQkIlRTklODAlODklRTQlQkElODYlRTglQkYlOTklRTUlQUUlQjYlRTMlODAlODIlRTYlOUUlOUMlRTclODQlQjYlRTUlQTQlQTclRTUlQUUlQjYlRTklODMlQkQlRTYlOUMlODklRTUlOTYlOUMlRTYlQUMlQTIlRTclOUElODQlRTglOEYlOUMlRTUlOTMlODElRTMlODAlODIlRTglOEYlOUMlRTUlOTMlODElRTclQUUlOTclRTYlQUYlOTQlRTglQkUlODMlRTQlQjglQjAlRTUlQUYlOEMlRUYlQkMlOEMlRTQlQjklOUYlRTglOUIlQUUlRTYlOTYlQjAlRTklQjIlOUMlRUYlQkMlODglRTclODElQUIlRTklOTQlODUlRTUlOEMlQkElRTglOTQlQUMlRTglOEYlOUMlRTUlOTMlODElRTglQjQlQTglRTclOTUlQTUlRTUlQjclQUUlRUYlQkMlOEMlRTUlODUlQjYlRTUlQUUlODMlRTklODMlQkQlRTQlQjglOEQlRTklOTQlOTklRUYlQkMlODklRTMlODAlODIlRTclOTQlOUMlRTUlOTMlODElRTMlODAlODElRTUlQjAlOEYlRTklQkUlOTklRTglOTklQkUlRTUlOTIlOEMlRTYlQjUlQjclRTklQjIlOUMlRTklODMlQkQlRTglOUIlQUUlRTUlQTUlQkQlRTMlODAlODIlRTUlQUYlQjklRTUlOUIlOUIlRTUlQjclOUQlRTglODMlODMlRTQlQjklOUYlRTclOUIlQjglRTUlQkQlOTMlRTclODUlQTclRTklQTElQkUlRTMlODAlODIlRTklQjglQTElRTUlQjAlQkUlRTklODUlOTIlRTklQTIlOUMlRTglODklQjIlRTclQkUlOEUlRTQlQkQlODYlRTUlOTElQjMlRTklODElOTMlRTUlQTQlQUElRTYlQjclQTElRTMlODAlODIlRTQlQjglOEQlRTglQjYlQjMlRTYlOTglQUY4JUU3JTgyJUI5JUU4JUJGJTg3JUU1JUJFJTg4JUU1JUE0JTlBJUU4JThGJTlDJUU1JTkzJTgxJUU1JUIwJUIxJUU2JUIyJUExJUU2JTlDJTg5JUU0JUJBJTg2JUUyJTgwJUE2JUU4JUFGJTlEJUU4JUFGJUI0JUU4JTg3JUFBJUU1JThBJUE5JUU5JUE0JTkwJUU4JUJGJTk5JUU2JUEwJUI3JUU0JUI4JThEJUU1JUE1JUJEJUU1JTkwJUE3JUUyJTgwJUE2JUU2JTgwJUJCJUU0JUJEJTkzJUU1JTgwJUJDJUU1JUJFJTk3JUU1JTg2JThEJUU1JThFJUJCJUU3JTlBJTg0JUU5JUE0JTkwJUU1JThFJTg1JTIyJTJDJTIyaWQlMjIlM0ExNTAyMDYwMTg5NDAwMDAxJTJDJTIycmVzdGF1cmFudElkJTIyJTNBMCUyQyUyMmVuam95VXJsJTIyJTNBJTIyZW5qb3lhcHAlM0ElMkYlMkZwcm9kdWN0JTJGZmVlZGJhY2slMkZsaXN0JTNGcHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlN0Q=",
+                "avatar":"https://image.ricebook.com/business/22268465023065",
+                "create_time":1502060189000,
+                "enjoy_url":"enjoyapp://product/feedback/list?product_id=1039344",
+                "id":1502060189400001,
                 "images":[
-                    "https://image.ricebook.com/feedback/1505144620340001",
-                    "https://image.ricebook.com/feedback/1505144620340005",
-                    "https://image.ricebook.com/feedback/1505144620340003",
-                    "https://image.ricebook.com/feedback/1505144620340002",
-                    "https://image.ricebook.com/feedback/1505144620340004",
-                    "https://image.ricebook.com/feedback/1505144620340007"
+                    "https://image.ricebook.com/feedback/1502060187340002",
+                    "https://image.ricebook.com/feedback/1502060189340002"
                 ],
-                "merchant_id":5211,
-                "nick_name":"ENJOY_66ip9xGG",
-                "order_id":1503709665320001,
-                "restaurant_id":11669424,
+                "merchant_id":2991,
+                "nick_name":"ENJOY_623zXLVd",
+                "order_id":"1501760205320001",
+                "restaurant_id":0,
                 "scores":[
                     {
                         "id":3,
@@ -328,13 +330,32 @@ export default{
                     }
                 ],
                 "source":"product",
-                "sub_product_id":5029705,
+                "sub_product_id":5082980,
                 "tags":[
-
+                    {
+                        "id":31,
+                        "name":"干净卫生"
+                    },
+                    {
+                        "id":18,
+                        "name":"摆盘精美"
+                    },
+                    {
+                        "id":17,
+                        "name":"食材新鲜"
+                    },
+                    {
+                        "id":16,
+                        "name":"好吃"
+                    },
+                    {
+                        "id":27,
+                        "name":"服务周到"
+                    }
                 ],
-                "text":"很棒喔，每次都超級愛吃他家的海鮮，特別新鮮！就是排位有點著急！",
+                "text":"为了照顾老中青，选来选去选了这家。果然大家都有喜欢的菜品。菜品算比较丰富，也蛮新鲜（火锅区蔬菜品质略差，其它都不错）。甜品、小龙虾和海鲜都蛮好。对四川胃也相当照顾。鸡尾酒颜色美但味道太淡。不足是8点过很多菜品就没有了…话说自助餐这样不好吧…总体值得再去的餐厅",
                 "update_time":1510418225000,
-                "user_id":21487351124578
+                "user_id":21246567924239
             },
             "id":16,
             "index":2
@@ -347,51 +368,258 @@ export default{
             "data":{
                 "contents":[
                     {
-                        "sub_title":"海鲜套餐",
+                        "sub_title":"温馨提示",
                         "text":[
-                            "虾/大目鱼/肥牛/鱼丸/生菜 ",
-                            "豆腐/南极笋/秋葵/金针菇/雪皮菜 ",
-                            "虾滑/蟹/排骨/肉滑/午餐肉 ",
-                            "巴沙鱼/花螺/ 娃娃菜/玉米",
-                            "魔芋丝/土豆/藕/番茄",
+                            "此菜单仅提供菜系作为参考，具体菜品请以酒店当日供应为准"
+                        ]
+                    },
+                    {
+                        "sub_title":"刺身",
+                        "text":[
+                            "川式三文鱼",
+                            "泰式三文鱼",
+                            "三文鱼刺身",
+                            "鲷鱼",
+                            "大八爪鱼",
+                            "希鲮鱼",
+                            "醋鲭鱼"
+                        ]
+                    },
+                    {
+                        "sub_title":"海鲜冰槽",
+                        "text":[
+                            "蓝口贝",
+                            "扇贝",
+                            "虾",
+                            "青口",
+                            "翡翠螺",
+                            "鳕蟹腿"
+                        ]
+                    },
+                    {
+                        "sub_title":"寿司",
+                        "text":[
+                            "寿司正卷",
+                            "寿司花卷",
+                            "寿司手握",
+                            "加州卷"
+                        ]
+                    },
+                    {
+                        "sub_title":"现场制作档口",
+                        "text":[
+                            "现开刺身生蚝",
+                            "蒜茸烤生蚝",
+                            "芝士焗生蚝"
+                        ]
+                    },
+                    {
+                        "sub_title":"现场炒小海鲜",
+                        "text":[
+                            "【海鲜】",
+                            "文蛤",
+                            "花甲",
+                            "蛤蜊",
+                            "雪蛤",
+                            "圣子",
+                            "海瓜子",
+                            "虾",
+                            "螺肉",
+                            "鱿鱼须 ",
+                            "【配素菜】",
+                            "藕条",
+                            "青笋条",
+                            "土豆条"
+                        ]
+                    },
+                    {
+                        "sub_title":"川式特色海鲜",
+                        "text":[
+                            "爆炒土龙虾（蒜蓉，香辣）（中）",
+                            "香辣蓝口贝（中）",
+                            "姜葱大虾（中）",
+                            "避风塘炒虾",
+                            "特色中式凉卤档",
+                            "卤龙虾（中），油焖虾（中） 卤菜档 兔头",
+                            "鸭头",
+                            "鸡尖翅",
+                            "郡肝",
+                            "君把",
+                            "鸡心",
+                            "冷吃兔",
+                            "藕",
+                            "花生",
+                            "毛豆",
+                            "豆干"
+                        ]
+                    },
+                    {
+                        "sub_title":"火锅档口",
+                        "text":[
+                            "【汤底】",
+                            "酸汤番茄汤底",
+                            "冬阴功汤底 ",
+                            "【小料】",
+                            "葱花，花椒粉，白芝麻，辣椒面，小米椒，香油，香菜，蚝油，味精，鸡粉，蒜茸，香茅，芝麻酱 ",
+                            "【荤菜】",
+                            "鱿鱼须",
+                            "目鱼花",
+                            "肥牛",
+                            "虾",
+                            "蟹柳",
+                            "素辽参",
+                            "素乌参",
+                            "虾饺 ",
+                            "【素菜】",
+                            "藕",
+                            "青笋",
+                            "土豆",
+                            "海带",
+                            "豆皮",
+                            "龙口粉丝",
+                            "金针菇",
+                            "香菇",
+                            "茼蒿",
+                            "凤尾 ",
+                            "娃娃菜"
+                        ]
+                    },
+                    {
+                        "sub_title":"蔬菜沙拉吧",
+                        "text":[
+                            "混合生菜",
+                            "胡萝卜丝",
+                            "圣女果",
+                            "玉米粒",
+                            "红腰豆",
+                            "黄瓜",
+                            "洋葱",
                             " "
                         ]
                     },
                     {
-                        "sub_title":"蘸碟",
+                        "sub_title":"钵钵鸡",
                         "text":[
-                            "（6选2）",
-                            "朴田秘制蘸碟",
-                            "鲜香泰式蘸碟",
-                            "泰式蘸碟",
-                            "香辣干碟",
-                            "小米辣蘸碟",
-                            "芥末蘸碟"
+                            "乐山钵钵鸡",
+                            "红油钵钵鸡",
+                            "椒麻钵钵鸡",
+                            "怪味钵钵鸡",
+                            "清汤钵钵鸡"
                         ]
                     },
                     {
-                        "sub_title":"特色",
+                        "sub_title":"凉菜",
                         "text":[
-                            "烤扇贝2只",
+                            "姜汁豇豆",
+                            "红油脆笋",
+                            "泡椒木耳",
+                            "口水鸡",
+                            "盐水鸭",
+                            "干拌牛肉",
                             " "
                         ]
                     },
                     {
-                        "sub_title":"饮品",
+                        "sub_title":"海鲜／肉扒",
                         "text":[
-                            "（3选2）",
-                            "原味莫吉托",
-                            "百柚苏打",
-                            "西柚C多多"
+                            "小鲳鱼",
+                            "比目鱼",
+                            "小黄鱼",
+                            "秋刀鱼",
+                            "牛排",
+                            "鸡扒"
                         ]
                     },
                     {
-                        "sub_title":"提示",
+                        "sub_title":"蒸档",
                         "text":[
-                            "套餐包含锅底",
-                            "因季节变化 海鲜类食材采购情况不同",
-                            "部分菜品将等价替换",
-                            "请以实际到店为准"
+                            "虾饺",
+                            "烧卖",
+                            "山药",
+                            "玉米"
+                        ]
+                    },
+                    {
+                        "sub_title":"中西式热菜",
+                        "text":[
+                            "椒盐里脊",
+                            "干锅牛蛙",
+                            "海鲜蒸蛋",
+                            "香菇什锦",
+                            "蚝油菜心",
+                            "新加坡烩海鲜",
+                            "BBQ鸡翅/奥尔良鸡翅/卡真鸡翅",
+                            "香茅虾锤/咖喱牛舌/炸猪扒配塔塔汁",
+                            "五彩粒炒饭"
+                        ]
+                    },
+                    {
+                        "sub_title":"汤类",
+                        "text":[
+                            "西式例汤",
+                            "中式例汤"
+                        ]
+                    },
+                    {
+                        "sub_title":"烤灯区",
+                        "text":[
+                            "披萨配小炸点"
+                        ]
+                    },
+                    {
+                        "sub_title":"水果档",
+                        "text":[
+                            "整水果／切片水果"
+                        ]
+                    },
+                    {
+                        "sub_title":"饮品类",
+                        "text":[
+                            "无酒精鸡尾酒",
+                            "含酒精鸡尾酒",
+                            "进口的红白葡萄酒",
+                            "品牌啤酒",
+                            "鲜榨西瓜汁",
+                            "苹果汁",
+                            "橙汁",
+                            "西柚汁",
+                            "可口可乐",
+                            "雪碧",
+                            "汤力水",
+                            "王老吉",
+                            "咖啡",
+                            "红茶",
+                            "绿茶"
+                        ]
+                    },
+                    {
+                        "sub_title":"甜品",
+                        "text":[
+                            "舒芙蕾",
+                            "芝士蛋糕",
+                            "歌剧蛋糕",
+                            "水果塔",
+                            "法式香草奶油焗蛋羹",
+                            "巧克力布郎尼",
+                            "意大利奶冻杯",
+                            "榴莲千层",
+                            "镜面慕斯蛋糕",
+                            "巧克力喷泉",
+                            "巧克力冰淇淋",
+                            "香草冰淇淋",
+                            "抹茶冰淇淋",
+                            "草莓冰淇淋",
+                            "冰淇林小料"
+                        ]
+                    },
+                    {
+                        "sub_title":"面包",
+                        "text":[
+                            "切片面包",
+                            "杂粮包",
+                            "法棍",
+                            "小法包",
+                            "软包"
                         ]
                     }
                 ]
@@ -407,25 +635,19 @@ export default{
             "data":{
                 "lights":[
                     {
-                        "content":"PAKTIN*plus 为朴田泰式海鲜火锅的升级版餐厅，独栋复式洋楼，坐落于长荣路，餐厅一改丝竹路的田园小清新风格，金丝设计的外观，呈现出富丽堂皇的气派。复式洋楼囊括一楼的咖啡厅，二楼三楼的泰式海鲜火锅，从午餐到夜场皆可在此享受。此次与 ENJOY 合作推出泰式海鲜火锅双人餐。",
-                        "img_url":"https://image.ricebook.com/business/18137680613767",
-                        "title":"囊括咖啡厅海鲜锅 金丝设计的独栋复式洋楼"
+                        "content":"本次东方广场假日酒店蚝虾啤酒夜特别推出四款热辣美味的小龙虾可供客人选择，两款热食香辣和蒜蓉味，两款冷食香卤和油焖，满足食客的不同需求。香辣入味的小龙虾和沁爽啤酒相配，绝对算是虚度炎炎夏日的绝佳选择。",
+                        "img_url":"https://image.ricebook.com/business/20693065823304",
+                        "title":"四款小龙虾任选 共赴热辣啤酒之夜"
                     },
                     {
-                        "content":"冬荫功汤是一道泰国名汤，也是“世界十大名汤”之一。在泰语中，“冬荫”指酸辣，“功”即是虾，合起来就是酸辣虾汤。泰式海鲜火锅，终其根本在于泰式冬荫功汤底。PAKTIN*plus 跳出泰国元素，将传统冬荫功的酸辣重口味弱化，浓浓奶香味更受本地食客们的欢迎。海鲜经过精心挑选，基围虾上桌时甚至还在动，足见新鲜。",
-                        "img_url":"https://image.ricebook.com/business/17723397413910",
-                        "title":"将泰式风味结合四川人口味改良 冬阴功汤底奶香更足"
-                    },
-                    {
-                        "content":"PAKTIN*plus 不仅汤底香，小到蘸碟也下足功夫。因为老板认为，长着一张“香香嘴”的四川人在吃火锅时，也十分看重蘸碟的味道。Paktin*plus 不光有鲜辣的「泰式蘸碟」、尖辣的「小米辣蘸碟」；也有独家秘制闻一闻就香辣入味的「朴田秘制蘸碟」，更创新了不辣的「鲜香泰式蘸碟」，还有专为特殊口味定制的「芥末蘸碟」与「香辣干碟」。",
-                        "img_url":"https://image.ricebook.com/business/18137689413384",
-                        "title":"吃火锅就要尝蘸碟 「秘制蘸碟」香辣提味"
+                        "content":"多彩而可爱的甜品区新增多款日式甜品，造型可爱的和果子、晶莹剔透，犹如水滴一般的水信玄饼，还有一处童话般的景色，就是汩汩流动的巧克力喷泉。香浓的巧克力酱裹挟着甜蜜的气息流泻而下，草莓、菠萝、西瓜等各式水果切块，拿竹签扎一块水果，轻轻伸到喷泉下，巧克力酱霎时将其包裹，外层甜蜜浓郁，水果清甜多汁，喜欢巧克力的人们恐怕要舍不得离开。",
+                        "img_url":"https://image.ricebook.com/business/20366379523116",
+                        "title":"多款和果子水信玄饼等日式甜品及巧克力喷泉"
                     }
                 ],
                 "text_array":[
-                    "囊括咖啡厅海鲜锅 金丝设计的独栋复式洋楼",
-                    "将泰式风味结合四川人口味改良 冬阴功汤底奶香更足",
-                    "吃火锅就要尝蘸碟 「秘制蘸碟」香辣提味"
+                    "四款小龙虾任选 共赴热辣啤酒之夜",
+                    "多款和果子水信玄饼等日式甜品及巧克力喷泉"
                 ]
             },
             "id":4,
@@ -439,32 +661,32 @@ export default{
             "data":{
                 "contents":[
                     {
-                        "text":"使用日期：2016.8.4-2017.9.30；"
+                        "text":"使用日期：2017.6.2-2017.9.30（七夕节不可使用）；"
                     },
                     {
-                        "text":"使用时段：11:00-22:00；"
+                        "text":"使用时段：周三到周六 17:30-21:00；"
                     },
                     {
-                        "text":"高峰期可能排队，建议错开高峰期到店用餐；"
+                        "text":"为避免高峰期建议至少提前1天提前预约；"
                     },
                     {
-                        "text":"本产品支持随时退款；"
+                        "text":"本产品支持随时退款； "
                     },
                     {
                         "text":"此礼遇不与店内其他优惠同享；"
                     },
                     {
-                        "text":"如需开具发票，请具体咨询商户；"
+                        "text":"如需开具发票，请具体咨询商户； "
                     },
                     {
-                        "text":"如有疑问，请联系 ENJOY 客服。电话：4008-909-511；微信：enjoyricebook"
+                        "text":"如有疑问，请联系 ENJOY 客服。电话：4008-909-511；微信： enjoyricebook "
                     }
                 ],
                 "express":[
 
                 ],
                 "restaurant_phone_number":[
-                    "028-69868710"
+                    "028-61303751"
                 ]
             },
             "id":9,
@@ -478,11 +700,11 @@ export default{
             "data":{
                 "recommend":[
                     {
-                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMTcwMzYlMkMlMjJfaW5kZXglMjIlM0EwJTdE",
-                        "area_name":"青羊区",
-                        "desc":"20年经验香港名厨创意之作",
+                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwNDU5NTklMkMlMjJfaW5kZXglMjIlM0EwJTdE",
+                        "area_name":"红牌楼",
+                        "desc":"生机食材 美味能量",
                         "distance":0,
-                        "enjoy_url":"enjoyapp://product/detail?id=1017036",
+                        "enjoy_url":"enjoyapp://product/detail?id=1045959",
                         "ext":{
                             "product_type":0,
                             "display_prop":[
@@ -490,150 +712,82 @@ export default{
                             ],
                             "light_spot":[
                                 {
-                                    "img":"18276369223940",
-                                    "img_url":"https://image.ricebook.com/business/18276369223940",
-                                    "title":"集时尚与美学生活于一体的素食生活馆",
+                                    "img":"21759863223708",
+                                    "img_url":"https://image.ricebook.com/business/21759863223708",
+                                    "title":"逃离城市森林 静享谧趣空间",
                                     "type":1,
-                                    "content":"Meli&Moli 联合众多国内外独立式设计品牌，打造集珠宝、服装、美学生活、书吧、素食等多元素为一体的生活馆。岁月静好花香阵阵，空气中飘着丝丝精油的芬芳，给生活带来品质的追求和艺术的感染力，喝杯咖啡，看看书，顺便穿走一条心仪已久的裙子，对生活品质有要求的女性心中那一个理想的都市后花园。"
+                                    "content":"走进黑色与白色相搭配的门楣，穿越一片纵横交错的竹架，城市的喧嚣放佛已远在身后。浅灰色的墙壁、暖咖色地面、黑色桌椅和高脚凳，简单的黑白灰，低饱和度的色彩，Normann 等进口自丹麦家具，简约而低调的北欧风格，令人舒适而安心。The hideout in the city forest，就像一片隐藏在城市森林里的秘密空间，喝上一杯好喝的咖啡，抛却纷繁复杂的困扰，享受有趣而安静的人生片刻，让身心栖息在一个有趣的避风港。"
                                 },
                                 {
-                                    "img":"18276372223588",
-                                    "img_url":"https://image.ricebook.com/business/18276372223588",
-                                    "title":"20年经验香港名厨温柔善待好食材",
+                                    "img":"21759865523664",
+                                    "img_url":"https://image.ricebook.com/business/21759865523664",
+                                    "title":"元气满满的能量轻食 ",
                                     "type":1,
-                                    "content":"餐厅主厨许嘉恒，醉心美食20年，曾师从香港十大名厨，并成为当时香港餐饮协会年轻的港籍会员。崇尚使用优质食材，并且坚持任何搭配都存在无限可能性，不存在好坏之分，只有美味与否。许主厨善于通过美食来沟通人与食物，与自然，以及人与人之间的情感，唤醒内心深处对生活热爱的那份情怀。"
-                                },
-                                {
-                                    "img":"18276375013298",
-                                    "img_url":"https://image.ricebook.com/business/18276375013298",
-                                    "title":"秘制披萨脆软浓香 健康素食也能甘鲜可口",
-                                    "type":1,
-                                    "content":"全采用进口食材，通过不断的尝试与精心搭配，烤制出别具匠心的「芝士牛油果披萨」浓香动人不输肉食之美；「芝士榴莲披萨」含有丰富的留恋肉甜香软嫩；「土豆蘑菇披萨」马铃薯甘甜淳朴的香气中增添了蘑菇的嫩脆；除此之外还有劲道弹牙的意面搭配煨煮多时浓郁醇厚的多种秘制酱料，令无负担的素食也变得喷香诱人无法抵抗。"
+                                    "content":"超级能量酸奶碗，以火遍健身圈的希腊酸奶为基底，奶香浓郁，高蛋白、低碳水、低钠且易饱腹。选用“健康网红”奇亚籽混合，轻松增加饱腹感、降低食欲。混合莓果、混合莓果、香蕉、燕麦、杏仁，酸甜可口、醇厚芳香的饱满滋味让立刻人元气满满。深海三明治选用新鲜厚切金枪鱼，肉质紧密，口感鲜嫩绵密，一口下去，冰鲜的口感放佛海风扑面而来。完美营养减脂色拉则是美好身材的最佳搭档，蛋白质含量可与牛肉媲美的藜麦搭配鸡胸肉、鸡蛋、玉米粒、苦菊、罗马生菜等食材，一大碗也能完全 hold 住，饱腹又美味。"
                                 }
                             ]
                         },
-                        "origin_price":8800,
-                        "price":4800,
-                        "product_id":1017036,
-                        "product_image_url":"https://image.ricebook.com/business/18276363723938",
-                        "product_name":"Meli&Moli 生活馆单人轻食",
+                        "origin_price":8000,
+                        "price":6600,
+                        "product_id":1045959,
+                        "product_image_url":"https://image.ricebook.com/business/21759858623704",
+                        "product_name":"The Hideout 单人轻食餐",
                         "sell_state":1,
                         "show_entity_name":"位"
                     },
                     {
-                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMzM3NzglMkMlMjJfaW5kZXglMjIlM0ExJTdE",
-                        "area_name":"金牛区",
-                        "desc":"诚意满满吃到饱腹的精致日料",
+                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMDkzODglMkMlMjJfaW5kZXglMjIlM0ExJTdE",
+                        "area_name":"高新区",
+                        "desc":"佛山星级大厨礼备十余新款点心任选 ",
                         "distance":0,
-                        "enjoy_url":"enjoyapp://product/detail?id=1033778",
+                        "enjoy_url":"enjoyapp://product/detail?id=1009388",
                         "ext":{
                             "product_type":0,
                             "display_prop":[
-
+                                {
+                                    "background_color":"#f6f6f6",
+                                    "name":"地铁沿线",
+                                    "background_img_color":"red",
+                                    "font_color":"#1a1a1a"
+                                },
+                                {
+                                    "background_color":"#f6f6f6",
+                                    "name":"城中招牌店",
+                                    "background_img_color":"red",
+                                    "font_color":"#1a1a1a"
+                                }
                             ],
                             "light_spot":[
                                 {
-                                    "img":"19183736113897",
-                                    "img_url":"https://image.ricebook.com/business/19183736113897",
-                                    "title":"在烂漫的樱花树下品地道日料",
+                                    "img":"21224402923220",
+                                    "img_url":"https://image.ricebook.com/business/21224402923220",
+                                    "title":"经典粤式味道 川韵灵犀一笔",
                                     "type":1,
-                                    "content":"上野樱花的装饰风格以樱花为主题的日料店。走进店内，随处可见粉色的浪漫樱花，仿佛真的置身日本的上野车站。占了整面墙的樱花壁纸和仿真的樱花树使得整家店充满了生机。店内以原木色为主色调，实木地板使空间显得更加温暖。简单的木制线条隔断很好地为食客们区分出私人的空间，使得就餐的环境舒适惬意。头顶上的古色古香的灯饰充满和风情调。顶面的吊柜和充满设计感的线条切割又增添了几分巧思和精致。"
+                                    "content":"成都希尔顿酒店御玺中餐厅阅如其名，典雅大方，空间通透明亮。简洁古朴的装潢背景，再糅入川西古韵一点灵犀之光，顷刻间便能捕捉到食客风雅之情。而餐厅点心更是由厨师团队精心打造，多年甜品制作的千锤百炼融入匠心独运的巧思，将每一道餐点呈上客人心间。入厅，便觉百味飘香；入口，更是口齿生香。"
                                 },
                                 {
-                                    "img":"19183738623613",
-                                    "img_url":"https://image.ricebook.com/business/19183738623613",
-                                    "title":"诚意满满的礼遇好食又饱腹",
+                                    "img":"17516357123606",
+                                    "img_url":"https://image.ricebook.com/business/17516357123606",
+                                    "title":"八十余款中式点心任选 从熊猫流沙包到蜜汁叉烧各式美味齐备",
                                     "type":1,
-                                    "content":"日料通常大都精致小巧，食客们可能有时会吃不饱，而此次礼遇中包涵了刺身寿司炸物，主食沙拉和汤品。以诚意满满的优惠价格，在保持日料精致的特色下让食客们完全饱腹。甄选新鲜的三文鱼制作的「三文鱼刺身」鲜嫩肥美，厚切口感扎实，薄切口感爽滑。创意的「鹅肝寿司」入口即化，经过烤制以后恰好去除了腥味，而且肥而不腻，创意的搭配巧妙新奇。上野的特色拉面，原汤醇香浓郁，拉面劲道爽口，饱满的一大碗，让食客们大快朵颐，暖心又暖胃。"
+                                    "content":"希尔顿酒店御玺中餐厅环境典雅，空间通透明亮，各式川粤点心与地道川菜皆有。蓉城味道里的「宫保鸡丁」「油焖虎皮青椒」鲜辣开胃，蒸点流沙包摇身一变，化成憨态可掬又可爱的熊猫模样。内馅儿带有颗粒感的流淌着浓香，一个熊猫的样子就颇具成都味道。「榴莲酥」外形像奇异果，酥皮脆口，内里却是软糯的榴莲，口齿留香。"
                                 }
                             ]
                         },
-                        "origin_price":18200,
-                        "price":14900,
-                        "product_id":1033778,
-                        "product_image_url":"https://image.ricebook.com/business/19183684323134",
-                        "product_name":"上野樱花日式精致料理（蜀汉路店）双人餐",
-                        "sell_state":1,
-                        "show_entity_name":"2位"
-                    },
-                    {
-                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMzUzNzIlMkMlMjJfaW5kZXglMjIlM0EyJTdE",
-                        "area_name":"桐梓林",
-                        "desc":"独立榻榻米包间的东瀛烤肉小铺 ",
-                        "distance":0,
-                        "enjoy_url":"enjoyapp://product/detail?id=1035372",
-                        "ext":{
-                            "product_type":0,
-                            "display_prop":[
-
-                            ],
-                            "light_spot":[
-                                {
-                                    "img":"20202829523380",
-                                    "img_url":"https://image.ricebook.com/business/20202829523380",
-                                    "title":"酸甜合宜的幼滑鹅肝寿司",
-                                    "type":1,
-                                    "content":"赤坂惠的寿司均选用日本进口寿司米制作，「火炙鹅肝寿司卷」将肥美丝滑的鹅肝与软糯的寿司做配。加入特制的寿司醋，酸甜适中，更能激发鹅肝原本的鲜香，并起到解腻的效用，让人回味无穷。"
-                                },
-                                {
-                                    "img":"20202830923377",
-                                    "img_url":"https://image.ricebook.com/business/20202830923377",
-                                    "title":"传统和风的东瀛烤肉小铺",
-                                    "type":1,
-                                    "content":"赤坂惠每处细节充满充满东瀛特色，不同规格的日式榻榻米包间满足了多种就餐情景的需求，不论两人约会、朋友小聚或是商务宴请等都能找到合适的位置。店员们也都身着日本传统服饰，店内墙壁上布置了诸多日式风格装饰画，让前来的食客能于独立包间内私密惬意享受浓郁日本风情。"
-                                }
-                            ]
-                        },
-                        "origin_price":32800,
-                        "price":24800,
-                        "product_id":1035372,
-                        "product_image_url":"https://image.ricebook.com/business/20202771323380",
-                        "product_name":"赤坂惠日式料理双人餐",
-                        "sell_state":1,
-                        "show_entity_name":"2位"
-                    },
-                    {
-                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwNDU4MDklMkMlMjJfaW5kZXglMjIlM0EzJTdE",
-                        "area_name":"武侯区",
-                        "desc":"畅享海鲜 超值福利",
-                        "distance":0,
-                        "enjoy_url":"enjoyapp://product/detail?id=1045809",
-                        "ext":{
-                            "product_type":0,
-                            "display_prop":[
-
-                            ],
-                            "light_spot":[
-                                {
-                                    "img":"21723242523912",
-                                    "img_url":"https://image.ricebook.com/business/21723242523912",
-                                    "title":"闹市中的静谧桃源 ",
-                                    "type":1,
-                                    "content":"成都明宇尚雅饭店隐蔽于市中心的静谧桃源，依偎在锦江河畔，静享绝美风光中的超然舒适生活。兰图咖啡厅重新装修并更名为全日餐吧，将于2017年9月29日开业。餐厅新开数十个档口，拥有上百种丰富的菜品。以西式美食以及生猛海鲜为主，味道鲜美，种类丰富。同时为食客奉上极具四川特色的小吃和地道的中式菜肴。大落地窗静享绝美的城市风光，简单而不简约的时尚设计，呈现舒适优雅的用餐气氛，是家庭聚会，朋友聚会和个人食客的极好选择。全日餐吧有着宽敞的宽敞的半开放式厨房，可供食客欣赏厨艺高超的主厨如何通过料理让食材变化成美味。"
-                                },
-                                {
-                                    "img":"21723244123913",
-                                    "img_url":"https://image.ricebook.com/business/21723244123913",
-                                    "title":"肥美多汁的野生蚝王 哈根达斯冰淇淋无限畅享",
-                                    "type":1,
-                                    "content":"全日餐吧提供琳琅满目的海味生鲜，包括蟹脚、红虾、青口、三点蟹、翡翠螺等，更有无限量肥美多汁的生蚝。作为主持推荐的波士顿龙虾，肉质细嫩滑脆，微微焦香的芝士融化裹挟于紧致的虾肉，鲜香醇厚的滋味，让海鲜爱好者大呼过瘾。多款经典美味的中式菜，更是结合了成都特色，为食客献上火红辣口味以及藤椒麻酥口味的钵钵鸡，更有成都名小吃的担担面等一饱口福。香草、巧克力、芒果等不同口味的哈根达斯冰淇淋无限畅享，每一口都让舌尖充满甜蜜。"
-                                }
-                            ]
-                        },
-                        "origin_price":23800,
-                        "price":15800,
-                        "product_id":1045809,
-                        "product_image_url":"https://image.ricebook.com/business/21790732823367",
-                        "product_name":"明宇尚雅酒店·全日餐吧海鲜自助晚宴",
+                        "origin_price":16000,
+                        "price":14800,
+                        "product_id":1009388,
+                        "product_image_url":"https://image.ricebook.com/business/21178875023735",
+                        "product_name":"希尔顿·御玺中餐厅主厨点心节午市点心自助",
                         "sell_state":1,
                         "show_entity_name":"位"
                     },
                     {
-                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMDcwMTUlMkMlMjJfaW5kZXglMjIlM0E0JTdE",
-                        "area_name":"锦江区",
-                        "desc":"ENJOY 独享赠送鲍汁自制豆腐",
+                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwNDY1MzIlMkMlMjJfaW5kZXglMjIlM0EyJTdE",
+                        "area_name":"玉林",
+                        "desc":"老板跋山涉水寻找正宗羊肉",
                         "distance":0,
-                        "enjoy_url":"enjoyapp://product/detail?id=1007015",
+                        "enjoy_url":"enjoyapp://product/detail?id=1046532",
                         "ext":{
                             "product_type":0,
                             "display_prop":[
@@ -641,270 +795,315 @@ export default{
                             ],
                             "light_spot":[
                                 {
-                                    "img":"17136761913187",
-                                    "img_url":"https://image.ricebook.com/business/17136761913187",
-                                    "title":"从2000多年古蜀文明汲取灵感 画卷式长廊呈现东方韵味",
+                                    "img":"20123161723863",
+                                    "img_url":"https://image.ricebook.com/business/20123161723863",
+                                    "title":"简洁工业风 蓝调的渲染下慵懒得不像一家烧烤店",
                                     "type":1,
-                                    "content":"位于成都富力丽思卡尔顿酒店26层的丽轩中餐厅，设计灵感来自2000多年的古蜀文明，以“芙蓉古都”和“丝绸之路”为灵感，随处可见的蜀锦装饰、缤纷的花朵，给摩登时尚的餐厅点缀出成都气息。画卷式长廊，将旧时繁荣盛景呈现眼前。十一间尊贵包间，以花朵为灵感源泉，让宾客在私密氛围中细品东方韵味。"
+                                    "content":"一串不肯媚俗的位于玉林东路，在周围一圈老式餐厅中，以其新式装修和招牌显得格外瞩目。店内装饰主打工业风，暖黄色的灯光和水泥色的墙面给人简约之感。相比成都其他的烧烤店，一串不肯媚俗的没有觥筹交错的喧嚣，反而是听着蓝调，慵懒地窝在沙发里啃肉串的舒适。"
                                 },
                                 {
-                                    "img":"17136764213869",
-                                    "img_url":"https://image.ricebook.com/business/17136764213869",
-                                    "title":"星级酒店行政主厨亲自设计菜单 精选多款招牌点心",
+                                    "img":"20123169123992",
+                                    "img_url":"https://image.ricebook.com/business/20123169123992",
+                                    "title":"因为不肯媚俗 所以跋山涉水寻找巴什拜羔羊肉",
                                     "type":1,
-                                    "content":"丽思卡尔顿新上任中厨行政主厨李师傅来自四川宜宾，精通粤菜与川菜，拥有超过二十二年烹饪经验。曾在多家国际品牌酒店任职，足迹遍布四川、北京、苏州及东非乌干达、土耳其伊斯坦布尔。"
+                                    "content":"有人曾质疑老板的羊肉是否来自正宗的原产地，老板则特别肯定地说，自己曾用了10个月走遍大半个中国，从西南深山到蒙西草原，走遍了所有绵羊养殖区，尝遍了三十多种绵羊，最后只挑选来自新疆库鲁斯台草原原始牧场的巴什拜羔羊，冷链直运到成都。他认为不同的羊肉有不同的吃法，比如内蒙古大草原的羊肉适合涮锅，而只有新疆的这种羊肉才适合做烧烤，烤出来的肉味才能达到上乘。还有店内的米酒、蘸碟里的香料等，也是老板从东北深山发掘，带到成都，做一家以东北味儿为基础的烧烤店。"
                                 },
                                 {
-                                    "img":"17136766613703",
-                                    "img_url":"https://image.ricebook.com/business/17136766613703",
-                                    "title":"品味正宗川粤风味 零点无限量现做现尝",
+                                    "img":"20123170823865",
+                                    "img_url":"https://image.ricebook.com/business/20123170823865",
+                                    "title":"不仅仅是羊肉串 其他烤串同样惊喜",
                                     "type":1,
-                                    "content":"本次菜单分为“滋味前菜”“厨品小菜”“蒸彩纷呈”“亲蜜无间”等四大系列，包括广式烧味、蒸点、甜品等不胜枚举的地道粤点。「蜜汁叉烧肠粉」采用地道广式叉烧做法，淋上蜜汁，肉的香嫩和蜜汁的清甜很好地混合，口感香浓。还有备受食客喜爱的「松露笋尖虾饺皇」、「瑶柱干蒸烧卖」、「银萝千层酥」、「蜜汁叉烧酥」、「黑松露菩提素果」等特色点心。除粤菜外，为迎合四川人的口感，主厨也特意准备一系列四川菜式，诸如「鲜辣脆鱼皮」，「干葱辣子鸡」、「水煮牛肉」、「酸菜鱼」等特色川菜，让食客享受一顿丰盛饱食。"
+                                    "content":"店内除了招牌的烤羊肉串，其他的烤串也都不肯媚俗。罗脊肉即我们常说的猪的护心肉，虽然是瘦肉，但是吃起来仍然有肥肉细嫩的口感，烤制之后蘸着味碟入口，香而不腻。熔浆面包则是面包片包裹着棉花糖，在经过炭火的熏烤后，面包酥脆，棉花糖也随高温熔化而软糯绵长，令食客的内心都柔软下来，是一份治愈人心的烤串。"
                                 }
                             ]
                         },
-                        "origin_price":38900,
-                        "price":26800,
-                        "product_id":1007015,
-                        "product_image_url":"https://image.ricebook.com/business/17136724413865",
-                        "product_name":"丽思卡尔顿·丽轩中餐厅点心自助晚餐",
+                        "origin_price":36800,
+                        "price":28800,
+                        "product_id":1046532,
+                        "product_image_url":"https://image.ricebook.com/business/20123158723859",
+                        "product_name":"一串不肯媚俗的灵魂四人膻",
+                        "sell_state":1,
+                        "show_entity_name":"4位"
+                    },
+                    {
+                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMDk4ODYlMkMlMjJfaW5kZXglMjIlM0EzJTdE",
+                        "area_name":"盐市口",
+                        "desc":"ENJOY 赠送调制精油和精油吊坠",
+                        "distance":0,
+                        "enjoy_url":"enjoyapp://product/detail?id=1009886",
+                        "ext":{
+                            "product_type":0,
+                            "display_prop":[
+
+                            ],
+                            "light_spot":[
+                                {
+                                    "img":"17541782323418",
+                                    "img_url":"https://image.ricebook.com/business/17541782323418",
+                                    "title":"技术手法操作流程均为泰国 SPA 国际专业标准",
+                                    "type":1,
+                                    "content":"禅庭 SPA 是内陆唯一泰国 SPA Thai Spa Association 协会会员单位。禅庭的技术手法、操作流程均参考了泰国 SPA 协会的国际化专业标准，同时也结合了本地特点，独创七轮 Chakras 芳香身心调整与经络理疗相结合的疗愈体系。在疗程体系中运用植物芳香精油、喜马拉雅颂钵、经络疏通仪器 、艾灸仪、细胞激活仪等以及非常丰富的按摩手法。"
+                                },
+                                {
+                                    "img":"17541788823385",
+                                    "img_url":"https://image.ricebook.com/business/17541788823385",
+                                    "title":"适合怀孕16周至38周健康孕妇的舒压按摩护理",
+                                    "type":1,
+                                    "content":"此次礼遇中的单人妊娠舒压按摩护理，适合怀孕16周至38周健康孕妇。护理之初，SPA 顾问会先了解孕期妈妈的身体情况，根据身体情况专门调配按摩油，浴足放松后，用来自喜玛拉雅手工铸造铜质密宗颂钵，以特定的节率敲击钵体，沉稳悠远的声音放松身心。天然的植物精油配合舒适的手法，为怀孕的妈妈滋养肌肤、调节情绪、改善妊娠中的心烦、倦怠、腰酸背痛、四肢水肿等情况。"
+                                },
+                                {
+                                    "img":"17541791813489",
+                                    "img_url":"https://image.ricebook.com/business/17541791813489",
+                                    "title":"十多种名贵中药加一小时纯手法蜜蜡按摩",
+                                    "type":1,
+                                    "content":"百草五行瘦身中禅庭 SPA 加入了10多种名贵的中药。禅庭最开始用它来调理身体，在调理身体的过程中发现有减肥的效果，才用来减肥。曾经在研究所做过无毒实验，小白鼠大剂量吃了也没有任何问题。在减肥的过程中，会有养生的功效，能够改善脾胃，肠道，血压血脂，泌尿生殖系统，水肿及代谢缓慢等问题。哺乳期，月经期均可做。"
+                                }
+                            ]
+                        },
+                        "origin_price":68000,
+                        "price":23800,
+                        "product_id":1009886,
+                        "product_image_url":"https://image.ricebook.com/business/17541757113578",
+                        "product_name":"禅庭舒缓按摩单人餐",
                         "sell_state":1,
                         "show_entity_name":"位"
                     },
                     {
-                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMzUzMDYlMkMlMjJfaW5kZXglMjIlM0E1JTdE",
-                        "desc":"成立于伦敦的独立品牌",
+                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMjU1NDklMkMlMjJfaW5kZXglMjIlM0E0JTdE",
+                        "area_name":"春熙路",
+                        "desc":"尽享星级酒店的下午茶点",
                         "distance":0,
-                        "enjoy_url":"enjoyapp://product/detail?id=1035306",
+                        "enjoy_url":"enjoyapp://product/detail?id=1025549",
+                        "ext":{
+                            "product_type":0,
+                            "display_prop":[
+
+                            ],
+                            "light_spot":[
+                                {
+                                    "img":"19241590123773",
+                                    "img_url":"https://image.ricebook.com/business/19241590123773",
+                                    "title":"超多经典粤式点心菜品任意选择",
+                                    "type":1,
+                                    "content":"NICCOLO 玥轩的菜单，让喜爱粤点的食客惊喜不已，菜单不仅有「奶黄流沙包」、「蚝皇叉烧包」等地到粤式点心，还有「麻香头抽龙芽炒面」、「生滚牛肉粥」等风味小吃，多款精挑细选过的点心主食，几乎都能找到各自的心头好。"
+                                },
+                                {
+                                    "img":"17118216613259",
+                                    "img_url":"https://image.ricebook.com/business/17118216613259",
+                                    "title":"与商场互通的星级酒店 逛完街再吃顿好的",
+                                    "type":1,
+                                    "content":"NICCOLO 坐落于 IFS 金融中心，玥轩餐厅的入口与商场互通，虽是星级酒店的餐饮，逛完街便能随时进入吃顿品质午餐。"
+                                },
+                                {
+                                    "img":"17118219313471",
+                                    "img_url":"https://image.ricebook.com/business/17118219313471",
+                                    "title":"每一款菜品都是现做现吃",
+                                    "type":1,
+                                    "content":"玥轩餐厅的包点都是现点现做。新鲜是任何调味品都无法调适出的自然之味。「蚝皇叉烧包」碳烤过后的肉有些美好的焦香味，肉汁本身的醇厚被底下垫着的葱丝吸收了些许油腻，多了些清香。「烧汁珍菌蘑菇包」菌菇的特殊香气在特制的酱汁的浇淋下别具一格。"
+                                }
+                            ]
+                        },
+                        "origin_price":10600,
+                        "price":7800,
+                        "product_id":1025549,
+                        "product_image_url":"https://image.ricebook.com/business/19241544923948",
+                        "product_name":"Niccolo·玥轩周末单人下午茶点心自助",
+                        "sell_state":1,
+                        "show_entity_name":"位"
+                    },
+                    {
+                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwNDUxNTQlMkMlMjJfaW5kZXglMjIlM0E1JTdE",
+                        "area_name":"高新区",
+                        "desc":"西部第一家费尔蒙酒店",
+                        "distance":0,
+                        "enjoy_url":"enjoyapp://product/detail?id=1045154",
+                        "ext":{
+                            "product_type":0,
+                            "display_prop":[
+
+                            ],
+                            "light_spot":[
+                                {
+                                    "img":"20005527723263",
+                                    "img_url":"https://image.ricebook.com/business/20005527723263",
+                                    "title":"海鲜活当先",
+                                    "type":1,
+                                    "content":"亲眼所见，亲手挑选喜爱鲜物是品尝海鲜的一大趣味所在。将海鲜夜市的游水海鲜池搬到五星级酒店内，现选鲜烹，生活气息浓厚而不市井。从游水海鲜池中直捞上案板，蒸、烤、焗、烩，顷刻完成。从活到熟，迅速转变，鲜味锁于盘中，配以国际风味调味酱汁直送餐桌，片时可享。"
+                                },
+                                {
+                                    "img":"20005531623265",
+                                    "img_url":"https://image.ricebook.com/business/20005531623265",
+                                    "title":"丰富海鲜品种应时节而变",
+                                    "type":1,
+                                    "content":" “成都美食站”特供鲜活麻辣小龙虾，以四川之味鲜调爆炒，献给本地老饕。应时令供应半人长的澳洲大龙虾，波士顿龙虾，老虎斑，多宝鱼等鲜活品种。冷餐台长供阿拉斯加长脚蟹，新西兰青口与沿海鲜送扇贝等各式丰富海鲜。除了独享海味，还有鲜货配以时蔬与特色酱汁的泰式意式料理，丰富层次味漫舌尖。最具特色的是莳萝腌三文鱼与四川辣椒腌三文鱼，将北欧风味与四川风味双重概念同时呈现，碰撞出热烈火花。 "
+                                }
+                            ]
+                        },
+                        "origin_price":41800,
+                        "price":36800,
+                        "product_id":1045154,
+                        "product_image_url":"https://image.ricebook.com/business/20005514523081",
+                        "product_name":"费尔蒙酒店·Spectrum 食百绚海鲜夜市单人自助晚餐",
+                        "sell_state":1,
+                        "show_entity_name":"位"
+                    },
+                    {
+                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMDc3NDUlMkMlMjJfaW5kZXglMjIlM0E2JTdE",
+                        "area_name":"春熙路",
+                        "desc":"一次品尝四种口味裸蛋糕",
+                        "distance":0,
+                        "enjoy_url":"enjoyapp://product/detail?id=1007745",
                         "ext":{
                             "product_type":1,
                             "display_prop":[
-                                {
-                                    "background_color":"#f6f6f6",
-                                    "name":"品牌直邮",
-                                    "background_img_color":"red",
-                                    "font_color":"#1a1a1a"
-                                },
-                                {
-                                    "background_color":"#f6f6f6",
-                                    "name":"可包邮",
-                                    "background_img_color":"red",
-                                    "font_color":"#1a1a1a"
-                                }
+
                             ],
                             "light_spot":[
                                 {
-                                    "img":"20211107523078",
-                                    "img_url":"https://image.ricebook.com/business/20211107523078",
-                                    "title":"以精选面料和创新工艺备受都市女性推崇",
+                                    "img":"17401758113676",
+                                    "img_url":"https://image.ricebook.com/business/17401758113676",
+                                    "title":"四种清新自然的裸蛋糕 寓意美好的新鲜口味",
                                     "type":1,
-                                    "content":"Not Just Pajama 是成立于伦敦的独立品牌，产品分为家居、度假服饰（Pajama & Resort）、睡眠用品（Beauty Sleeper）和旅行用品（Travel Collection）三个主系列，以打破传统的外穿式睡衣（Walking Sleepwear）而备受都市女性推崇。Not Just Pajama 密切关注客户的舒适体验以及紧趋时尚潮流，无论是男女家居睡衣、睡袍或度假服饰，每件都融入了他们自己对设计的理解，为产品赋予了现代随意的时尚感。Not Just Pajama 希望以精选面料和创新的混搭工艺，让每位穿戴者都能体验到舒适质感的居家生活。"
+                                    "content":"MOMOKO 春四季裸蛋糕包含四种清新自然口味：法国纯脂巧克力和芝士奶油夹心制作的乳酪味浓郁的浆果阵地，拥有红豆夹心清爽酸甜的抹茶戚风蛋糕，柑橘丁夹心入口 Q 弹的柠檬柑橘戚风蛋糕，还有触动少女心的粉红马蒂尼，每一款都是人气之选。"
                                 },
                                 {
-                                    "img":"20211143323077",
-                                    "img_url":"https://image.ricebook.com/business/20211143323077",
-                                    "title":"柔软面料内填充有法国进口天然薰衣草籽",
+                                    "img":"17401759423520",
+                                    "img_url":"https://image.ricebook.com/business/17401759423520",
+                                    "title":"天然食材 浪漫风格 每一款四季都有自己的故事",
                                     "type":1,
-                                    "content":"英国 Not Just Pajama 收纳袋小号，少女粉、薄荷绿、婴儿蓝、绅士蓝四色可供选择。面料和填充物选用化纤材质，手感顺滑柔软。收纳袋内还填充有法国进口的天然薰衣草籽，具有除味增添芳香的作用。此系列小号收纳袋，适合收纳眼罩、手绢、小手巾等；因为尺寸适中，平时随身放入包内作为小物品的收纳袋也十分合适。"
+                                    "content":"此次的春四季将马卡龙、草莓、红豆、巧克力、蓝莓等等天然食材组合在一起，裸露的水果装点其上，入口清爽，如沐春风。浪漫的情调不觉在口中萦绕。MOMOKO 的每一款四季都有自己的故事。如春四季，寓意美好。"
                                 }
                             ]
                         },
-                        "price":4900,
-                        "product_id":1035306,
-                        "product_image_url":"https://image.ricebook.com/business/20211100523072",
-                        "product_name":"英国 Not Just Pajama 收纳袋小号",
+                        "origin_price":25800,
+                        "price":25200,
+                        "product_id":1007745,
+                        "product_image_url":"https://image.ricebook.com/business/17401753213725",
+                        "product_name":"MOMOKO 蜜桃家四季蛋糕",
                         "sell_state":1,
-                        "show_entity_name":"件"
+                        "show_entity_name":"份"
                     },
                     {
-                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMzYwMTklMkMlMjJfaW5kZXglMjIlM0E2JTdE",
-                        "area_name":"盐市口",
-                        "desc":"老牌星级酒店尽尝十四款经典成都味道",
+                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwNTEwODMlMkMlMjJfaW5kZXglMjIlM0E3JTdE",
+                        "area_name":"桐梓林",
+                        "desc":"坚持”纯然、手感” 不添加色素的健康蛋糕",
                         "distance":0,
-                        "enjoy_url":"enjoyapp://product/detail?id=1036019",
+                        "enjoy_url":"enjoyapp://product/detail?id=1051083",
                         "ext":{
-                            "product_type":0,
-                            "display_prop":[
-                                {
-                                    "background_color":"#f6f6f6",
-                                    "name":"地铁沿线",
-                                    "background_img_color":"red",
-                                    "font_color":"#1a1a1a"
-                                }
-                            ],
-                            "light_spot":[
-                                {
-                                    "img":"20282404723537",
-                                    "img_url":"https://image.ricebook.com/business/20282404723537",
-                                    "title":"十四款经典成都小吃任选 体验地道老成都滋味",
-                                    "type":1,
-                                    "content":"此次礼遇中包含了十四款成都经典传统小吃可选，叶儿耙、担担面、钟水饺、蛋烘糕，每款都是老成都的代表滋味，主厨以精湛的厨艺烹饪地道川式美味，还原成都小吃精髓。「钟水饺」为代表的地道成都小吃以主厨特酿的辣油为料，红亮润泽，让人食欲大开。「叶儿耙」用糯米碾成面粉，包裹上肥瘦兼半的内陷儿，垫上叶儿，上锅蒸熟，咬一口，热汤便从齿间流出，软香粘糯。每一筷子都让食客流连于成都小吃的诱人滋味，难以自拔。"
-                                },
-                                {
-                                    "img":"20282405623487",
-                                    "img_url":"https://image.ricebook.com/business/20282405623487",
-                                    "title":"师从中国烹饪名师卢朝华的李兵主厨",
-                                    "type":1,
-                                    "content":"岷轩中餐厅的主厨李兵先生是中国烹饪名师，师从中国烹饪大师卢朝华门下，从事烹饪工作25年有余。90年就进入五星级酒店系统学习烹饪专业基础知识。02年至今，管理多家酒店厨政工作。一直秉承坚持、传承、创新、融合理念。正如他说，没有传统作为基石，就没有创新。"
-                                },
-                                {
-                                    "img":"20282413623538",
-                                    "img_url":"https://image.ricebook.com/business/20282413623538",
-                                    "title":"繁华市中心酒店的临江美景",
-                                    "type":1,
-                                    "content":"岷轩中餐厅位于成都历史悠久的知名酒店——岷山饭店2楼，临窗便是成都标志性的锦江。餐厅装潢大气典雅却不失温馨恬静，在闲暇的晌午，与好友闲坐窗前，享受着酒店式悉心服务的同时，也能舒心享用大厨精心制作的地道成都美食。"
-                                }
-                            ]
-                        },
-                        "origin_price":11200,
-                        "price":9800,
-                        "product_id":1036019,
-                        "product_image_url":"https://image.ricebook.com/business/20282360123536",
-                        "product_name":"岷山饭店·珉轩中餐厅单人午餐",
-                        "sell_state":1,
-                        "show_entity_name":"位"
-                    },
-                    {
-                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMzgxNTAlMkMlMjJfaW5kZXglMjIlM0E3JTdE",
-                        "area_name":"盐市口",
-                        "desc":"市中心老牌五星酒店尽揽府河美景",
-                        "distance":0,
-                        "enjoy_url":"enjoyapp://product/detail?id=1038150",
-                        "ext":{
-                            "product_type":0,
-                            "display_prop":[
-                                {
-                                    "background_color":"#f6f6f6",
-                                    "name":"城中招牌店",
-                                    "background_img_color":"red",
-                                    "font_color":"#1a1a1a"
-                                },
-                                {
-                                    "background_color":"#f6f6f6",
-                                    "name":"地铁沿线",
-                                    "background_img_color":"red",
-                                    "font_color":"#1a1a1a"
-                                },
-                                {
-                                    "background_color":"#f6f6f6",
-                                    "name":"高空美景",
-                                    "background_img_color":"red",
-                                    "font_color":"#1a1a1a"
-                                }
-                            ],
-                            "light_spot":[
-                                {
-                                    "img":"20558907423091",
-                                    "img_url":"https://image.ricebook.com/business/20558907423091",
-                                    "title":"繁华市中心酒店纵览高空美景",
-                                    "type":1,
-                                    "content":"The River House 西餐厅位于成都历史悠久的知名酒店——岷山饭店顶层21楼，从明亮的全景落地窗向下俯瞰，就是成都标志性的府南河。餐厅装潢大气典雅却不失温馨恬静，在闲暇的午后，与一两好友闲坐窗前，享受着酒店式悉心服务的同时，也在悠扬的古典音乐里放松小憩。"
-                                },
-                                {
-                                    "img":"20558911923111",
-                                    "img_url":"https://image.ricebook.com/business/20558911923111",
-                                    "title":"以新鲜蛋黄做酱烘托芦笋迷人清香",
-                                    "type":1,
-                                    "content":"The River House 别具匠心的「芦笋沙拉」把面粉、鸡蛋与水和成浆，并将流心新鲜鸡蛋裹浆放入油锅炸成金黄色，酥脆表皮裂开同时鲜香蛋黄流出，鲜美蛋香混合芦笋独有的清新香味，搭配有世界三大珍味之一盛誉的黑松露与色泽嫩红帕尔马火腿，黑松露独特的森林泥土气息与柔软丝滑的喷香火腿在唇齿间碰撞。"
-                                },
-                                {
-                                    "img":"20558915823113",
-                                    "img_url":"https://image.ricebook.com/business/20558915823113",
-                                    "title":"真空低温烹调软糯细腻的喷香牛小排",
-                                    "type":1,
-                                    "content":"餐厅主厨 Robert 为人亲切、谦和，作为80后年轻一代，已有十年厨房工作经验。热爱烹饪的他，对待食物充满热情与创造力。The River House 每进一批上好食材， Robert 都会“因材施教”，创作出最适合食物本身的佳肴。此次推出的主菜「低温煮黑胡椒澳洲牛小排」特选澳洲进口牛小排，并将牛小排用抽真空的办法包装，以65度左右的低温恒温水浴慢煮数小时，将牛肉充分胶质软化，最终呈现肉质软糯细腻的上佳口感。肉块入口时能清楚感受到汁水随着牙齿的咀嚼而散溢开来，牛肉的香味很好地传递到舒展口腔的每一个味蕾，配合意大利芹、番茄、红胡椒、百里香等配料佐味，混合滋味在唇齿间盘旋游走，让食客纵情沉浸于大口吃肉的美好时光里。"
-                                }
-                            ]
-                        },
-                        "origin_price":42800,
-                        "price":19800,
-                        "product_id":1038150,
-                        "product_image_url":"https://image.ricebook.com/business/20558895723115",
-                        "product_name":"岷山饭店·The River House 西餐厅单人午餐",
-                        "sell_state":1,
-                        "show_entity_name":"位"
-                    },
-                    {
-                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwNTE0MzIlMkMlMjJfaW5kZXglMjIlM0E4JTdE",
-                        "area_name":"高新区",
-                        "desc":"禅宗元素经典下午茶",
-                        "distance":0,
-                        "enjoy_url":"enjoyapp://product/detail?id=1051432",
-                        "ext":{
-                            "product_type":0,
+                            "product_type":1,
                             "display_prop":[
 
                             ],
                             "light_spot":[
                                 {
-                                    "img":"22796516423653",
-                                    "img_url":"https://image.ricebook.com/business/22796516423653",
-                                    "title":"以魔方的概念打造三层随意切换的多概念就餐空间",
+                                    "img":"22735024523205",
+                                    "img_url":"https://image.ricebook.com/business/22735024523205",
+                                    "title":"超模 Linda 也爱吃的低糖低油低脂蛋糕",
                                     "type":1,
-                                    "content":"成都棕榈泉费尔蒙酒店 Cube 以魔方为概念，在酒店独辟出一处三层楼的空间，打造出多层空间多种概念的餐吧。在 Cube 每一层楼都有自己独立的空间却又相互贯通：位于一层是主打下午茶的大堂吧；位于二层是主打费尔蒙经典鸡尾酒的鸡尾酒吧；三层则是充满现代感的新式居酒屋，目前礼备有2款鸡尾酒，与21款烧酒，及多款威士忌。食客大可在一楼用完下午茶点乘坐电梯直上三楼用餐，用餐结束还可到二楼听着 live show 再小酌一番。"
+                                    "content":"Hi Bake 的蛋糕因为低糖低油低脂，并且顺应“健康烘焙”的理念。使传统烘焙产品含糖量从 40%-45% 降低到 15%-20% 。在低脂的基础上又使油脂含量从 30%-40% 降低到 10% 以下。所以就连超模 Linda 也爱上了 Hi Bake 的蛋糕。"
+                                },
+                                {
+                                    "img":"22731847623083",
+                                    "img_url":"https://image.ricebook.com/business/22731847623083",
+                                    "title":"坚持”纯然、手感” 不添加色素的健康蛋糕",
+                                    "type":1,
+                                    "content":"在不改变Hi bake一直坚持的“纯然、手感”理念下，「布朗熊蛋糕」选用新西兰进口乳脂奶油，无天然色素，蛋糕胚中含有新鲜制作的芒果布丁夹层，更加迎合小朋友的口感。蛋糕上面的装饰是无毒灭菌的卡通公仔，做出最能瞬间吸引孩子眼球的造型，虽不能食用，但可以作为玩具陪伴孩子玩耍。"
+                                },
+                                {
+                                    "img":"20269801723380",
+                                    "img_url":"https://image.ricebook.com/business/20269801723380",
+                                    "title":"甜度减半热量仅为普通的十分之一的「生乳半糖牛轧糖」",
+                                    "type":1,
+                                    "content":"此次礼遇中的「生乳半糖牛轧糖」采用有机花生仁和新西兰安佳奶粉制作，历经半年研发，半年调整，12道工艺磨砺，日本海藻糖代替蔗糖，甜度减半，热量仅为普通的十分之一，好吃不粘牙，坚韧香脆，奶香浓郁。桔柑和麦麸提炼的环保纸浆的包装，环保又美观。"
                                 }
                             ]
                         },
-                        "origin_price":42400,
-                        "price":32800,
-                        "product_id":1051432,
-                        "product_name":"费尔蒙酒店·CUBE大堂酒廊经典双人下午茶",
+                        "origin_price":20600,
+                        "price":16800,
+                        "product_id":1051083,
+                        "product_image_url":"https://image.ricebook.com/business/22731818723077",
+                        "product_name":"Hi bake儿童少女系蛋糕3选1+生乳牛轧糖套餐",
                         "sell_state":1,
-                        "show_entity_name":"2位"
+                        "show_entity_name":"份"
                     },
                     {
-                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwMzU5MjIlMkMlMjJfaW5kZXglMjIlM0E5JTdE",
-                        "area_name":"盐市口",
-                        "desc":"老牌星级酒店品质自助美食",
+                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwNDgyOTclMkMlMjJfaW5kZXglMjIlM0E4JTdE",
+                        "area_name":"科华北路",
+                        "desc":"零添加的手工精制甜点",
                         "distance":0,
-                        "enjoy_url":"enjoyapp://product/detail?id=1035922",
+                        "enjoy_url":"enjoyapp://product/detail?id=1048297",
                         "ext":{
-                            "product_type":0,
+                            "product_type":1,
                             "display_prop":[
-                                {
-                                    "background_color":"#f6f6f6",
-                                    "name":"城中招牌店",
-                                    "background_img_color":"red",
-                                    "font_color":"#1a1a1a"
-                                },
-                                {
-                                    "background_color":"#f6f6f6",
-                                    "name":"地铁沿线",
-                                    "background_img_color":"red",
-                                    "font_color":"#1a1a1a"
-                                }
+
                             ],
                             "light_spot":[
                                 {
-                                    "img":"17025366413395",
-                                    "img_url":"https://image.ricebook.com/business/17025366413395",
-                                    "title":"精致优雅的老牌星级酒店欢享自助美食",
+                                    "img":"22196522923744",
+                                    "img_url":"https://image.ricebook.com/business/22196522923744",
+                                    "title":"以自然的食材还原真实的感动",
                                     "type":1,
-                                    "content":"岷山饭店作为成都老牌的星级酒店，用餐环境与服务水平都让人有宾至如归之感。位于酒店一楼的芝芝咖啡自助餐厅，灯光璀璨却不失端正典雅。光影辉映间，各色美食就像舞台上的演员一般，为客人演绎出丰盛愉快的一餐。靠窗而坐，窗外便是灵动的喷泉花园，花团锦簇尽收眼底。"
+                                    "content":"吾卷是成都并不多见的蛋糕卷专卖店，专注于提供“纯手工无添加”的高颜值蛋糕卷。餐厅精选新西兰安佳动物乳脂奶油、日本丸久小山园抹茶粉、法国Valrhona 巧克力可可粉等进口食材，以优质原料缔造最佳的口感。吾卷坚持古法手工作业，拒绝工业化加工，以传统制作手法寻找食物最好的口感；坚持“零添加”理念，蛋糕卷上的颜色都是从新鲜食材中提取的，例如绿色来自抹茶、粉色来自覆盆子果泥，深棕来自巧克力。分享健康与美味是创立品牌的初衷，要依靠食材自身的特性和的传统的手工工艺，还原出食材的本真滋味，带给食客最纯真的美好。"
                                 },
                                 {
-                                    "img":"20282186423464",
-                                    "img_url":"https://image.ricebook.com/business/20282186423464",
-                                    "title":"高品质的海鲜档口荟萃鲜活美味",
+                                    "img":"22196527323727",
+                                    "img_url":"https://image.ricebook.com/business/22196527323727",
+                                    "title":"纯正宇治抹茶粉与香醇奶油的邂逅",
                                     "type":1,
-                                    "content":"芝芝自助餐厅海鲜档口荟萃了丰富而鲜美的海鲜料理，不仅讲究食材的高品质，同时让食客对菜品有更丰富的选择。「芝芝特制香蒜焗扇贝」以浓郁的蒜香配上新鲜的扇贝，鲜活的大海滋味在口中扩散。专业负责的厨师团队精心烹饪，保证高品质食材得意原汁原味纯正释放。"
+                                    "content":"吾卷使用的抹茶粉均来自宇治老字号品牌丸久小山园，作为宇治市久负盛名的茶园之一的小山园一向以出产高品质抹茶而著称。「宇治抹茶蜜豆」拥有天使般柔软口感，戚风蛋糕松软黏绵，轻咬一口，抹茶的甘苦味便在嘴边四散开来；内部包裹的铁塔淡奶油奶香浓郁，入口即化，清爽而不甜腻；内馅蜜豆颗粒圆润饱满，软糯香甜。抹茶的清苦、奶油的幼滑和红豆的甜糯巧妙舒适的融为一体，一口倾心。"
                                 },
                                 {
-                                    "img":"20282189123528",
-                                    "img_url":"https://image.ricebook.com/business/20282189123528",
-                                    "title":"环球美食开放式厨房 几十位大厨烹饪丰盛经典美食",
+                                    "img":"22196526023802",
+                                    "img_url":"https://image.ricebook.com/business/22196526023802",
+                                    "title":"一见钟情不如久吃不腻",
                                     "type":1,
-                                    "content":"芝芝咖啡自助餐厅设有多个开放式厨房，几十位大厨有条不紊地忙碌着，通过对新鲜食材的巧妙解读来表现美食的丰富传统与多样。无论是本土地道的「成都风味冒菜」还是异国风情浓郁的「煎德国奶酪香肠」，让食客不出远门就能体验异域风情。芝芝的各式甜点也颇受欢迎，名声在外的「芝芝特式拿破仑」酥脆可口，内馅柔软细腻。"
+                                    "content":"吾卷精益求精，追求一种甜而不腻的完美口感。在不影响食物味道的基础上对配方进行改良，将糖分含量减少50%，并且尽可能地用蜂蜜替代砂糖。吃起来口感轻盈、甜而不腻。吾卷制作的低脂低糖的甜点，解决了糖分过高的问题，让食客能够卸下这“甜蜜的负担”，肆意享受甜食带来的幸福与满足。"
                                 }
                             ]
                         },
-                        "origin_price":25070,
-                        "price":18800,
-                        "product_id":1035922,
-                        "product_image_url":"https://image.ricebook.com/business/20282126823439",
-                        "product_name":"岷山饭店·芝芝咖啡自助餐厅单人晚市自助",
+                        "origin_price":21800,
+                        "price":20800,
+                        "product_id":1048297,
+                        "product_image_url":"https://image.ricebook.com/business/22196500523740",
+                        "product_name":"吾卷乳酪慕斯蛋糕/鲜果奶油蛋糕",
                         "sell_state":1,
-                        "show_entity_name":"位"
+                        "show_entity_name":"份"
+                    },
+                    {
+                        "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfZnJvbSUyMiUzQSUyMnJlY29tbWVuZCUyMiUyQyUyMnByb2R1Y3RJZCUyMiUzQTEwNDc0MDclMkMlMjJfaW5kZXglMjIlM0E5JTdE",
+                        "area_name":"双林路",
+                        "desc":"幸福就是唇齿之间的那一丝甜",
+                        "distance":0,
+                        "enjoy_url":"enjoyapp://product/detail?id=1047407",
+                        "ext":{
+                            "product_type":1,
+                            "display_prop":[
+
+                            ],
+                            "light_spot":[
+                                {
+                                    "img":"22114173423279",
+                                    "img_url":"https://image.ricebook.com/business/22114173423279",
+                                    "title":"每一颗元生牛轧糖 都是儿时的记忆",
+                                    "type":1,
+                                    "content":"牛轧糖是许多人儿时的回忆，它那奶味醇厚、软糯香甜的味道让人念念不忘。元生采用法国进口黄油、新西兰优质奶粉及日本天然海藻糖等原材料，高达60%的杏仁比例，再经过手工精制，唇齿之间满是香甜细腻，口感香软不失嚼劲。每一批次的牛轧糖从处理配料，下锅熬煮，起锅到成型，皆以最古老的手工技法保存食物最本来的风味，找回儿时初尝时的甜蜜与幸福。咬下一口，立马被浓郁酥脆奶香所包裹，伴随着酥脆的坚果和缠绵坚实的咀嚼，幸福便在那一刻悄悄降临。"
+                                },
+                                {
+                                    "img":"22114175623280",
+                                    "img_url":"https://image.ricebook.com/business/22114175623280",
+                                    "title":"以海南凤梨入馅的酥软凤梨酥 ",
+                                    "type":1,
+                                    "content":"凤梨酥起源于三国时期，相传当年刘备以凤梨入馅制成的喜饼迎娶孙权之妹。后来逐渐演变为结合西式派皮与中式馅料所制成的现代“凤梨酥”，外皮酥松化口，凤梨内馅甜而不腻。元生精选甜如蜜、香如花的海南菠萝，从去皮、切丁、再经历两小时的手工煎熬和搅拌，每一个环节都经过严格把控和标准化制作。内陷无其他添加物，仅加入蜂蜜与砂糖调味，保留住凤梨最原始的酸甜滋味。轻咬一口，果香四溢，酥到心甜。"
+                                }
+                            ]
+                        },
+                        "origin_price":2500,
+                        "price":2300,
+                        "product_id":1047407,
+                        "product_image_url":"https://image.ricebook.com/business/22114158623332",
+                        "product_name":"元生咖啡特制牛轧糖/凤梨酥",
+                        "sell_state":1,
+                        "show_entity_name":"份"
                     }
                 ]
             },
@@ -913,118 +1112,67 @@ export default{
         }
     ],
     "basic":{
-        "description":"汤底奶香浓郁 海鲜新鲜到店",
+        "description":"融汇多国菜系的 fusion restaurant",
         "display_property_group":[
-            {
-                "background_color":"#fff0f0",
-                "font_color":"#ff3939",
-                "name":"超值商品"
-            },
-            {
-                "background_color":"#f6faff",
-                "font_color":"#325782",
-                "name":"城中招牌店"
-            }
+
         ],
         "is_favorite":false,
         "is_flash":false,
-        "left_count":46006,
-        "max_count_per_order":500,
+        "left_count":4649,
+        "max_count_per_order":100,
         "min_count_per_order":1,
-        "name":"朴田泰式海鲜火锅（泛悦国际店）双人餐",
-        "offline_time":1505145540000,
-        "origin_price":26800,
-        "price":22800,
-        "product_id":1015585,
-        "product_images":[
-            {
-                "img_url":"https://image.ricebook.com/business/17723378223902",
-                "special_show":false
-            },
-            {
-                "img_url":"https://image.ricebook.com/business/17723435523385",
-                "special_show":false
-            },
-            {
-                "img_url":"https://image.ricebook.com/business/17723358623901",
-                "special_show":true
-            },
-            {
-                "img_url":"https://image.ricebook.com/business/17723362413974",
-                "special_show":false
-            },
-            {
-                "img_url":"https://image.ricebook.com/business/17723360123421",
-                "special_show":false
-            },
-            {
-                "img_url":"https://image.ricebook.com/business/17723375723382",
-                "special_show":false
-            },
-            {
-                "img_url":"https://image.ricebook.com/business/17723357323900",
-                "special_show":false
-            },
-            {
-                "img_url":"https://image.ricebook.com/business/18137675013766",
-                "special_show":false
-            },
-            {
-                "img_url":"https://image.ricebook.com/business/18137675013058",
-                "special_show":false
-            },
-            {
-                "img_url":"https://image.ricebook.com/business/18137675013380",
-                "special_show":false
-            }
-        ],
+        "name":"BISHOP 主教餐吧双人餐",
+        "offline_time":1506787140000,
+        "origin_price":18400,
+        "price":13800,
+        "product_id":1041327,
+        "product_images":[{"img_url":"https://image.ricebook.com/business/20969581423536","special_show":false},{"img_url":"https://image.ricebook.com/business/20969588123537","special_show":false},{"img_url":"https://image.ricebook.com/business/20969588423454","special_show":false},{"img_url":"https://image.ricebook.com/business/20969588223453","special_show":false},{"img_url":"https://image.ricebook.com/business/20969588323509","special_show":false},{"img_url":"https://image.ricebook.com/business/20969588323508","special_show":false},{"img_url":"https://image.ricebook.com/business/20969588223507","special_show":false},{"img_url":"https://image.ricebook.com/business/20969588123538","special_show":false},{"img_url":"https://image.ricebook.com/business/21109329223073","special_show":false},{"img_url":"https://image.ricebook.com/business/21108811523027","special_show":false},{"img_url":"https://image.ricebook.com/business/20927080423414","special_show":false},{"img_url":"https://image.ricebook.com/business/21108811523132","special_show":false},{"img_url":"https://image.ricebook.com/business/20927079723413","special_show":false}],
         "product_type":0,
         "refund_type":2,
-        "sell_begin_time":1470240000000,
-        "sell_end_time":1505145540000,
+        "sell_begin_time":1496332800000,
+        "sell_end_time":1506787140000,
         "sell_state":5,
-        "server_time":1520944815610,
+        "server_time":1521003432140,
         "share_info":{
             "sub_title":"分享赢礼券",
             "text":"好友从你分享的链接注册 ENJOY 并消费，你可获得价值 50 元礼券，多邀多得。"
         },
-        "shelving_time":1470240000000,
-        "short_name":"朴田泰式海鲜火锅（泛悦国际店）双人餐",
-        "show_entity_name":"2位",
-        "spec":"特配双人餐",
+        "shelving_time":1496332800000,
+        "short_name":"东方广场假日酒店蜀咖啡蚝虾啤酒夜单人自助晚餐",
+        "show_entity_name":"位",
+        "spec":"蚝虾啤酒夜成人自助",
         "sub_product_array":[
             {
-                "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfaW5kZXglMjIlM0EwJTJDJTIyc3ViUHJvZHVjdElkJTIyJTNBNTAyOTcwNCU3RA==",
+                "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfaW5kZXglMjIlM0EwJTJDJTIyc3ViUHJvZHVjdElkJTIyJTNBNTA4Mjk4MCU3RA==",
                 "is_flash":false,
                 "is_promotion":false,
-                "name":"朴田泰式海鲜火锅（泛悦国际店）双人餐",
-                "origin_price":26800,
+                "name":"东方广场假日酒店蜀咖啡蚝虾啤酒夜单人自助晚餐",
+                "origin_price":25800,
                 "pass_info":[
 
                 ],
-                "price":22800,
+                "price":13900,
                 "sell_state":5,
-                "show_entity_name":"2位",
-                "spec":"特配双人餐",
-                "sub_product_id":5029704
+                "show_entity_name":"位",
+                "spec":"蚝虾啤酒夜成人自助",
+                "sub_product_id":5082980
             },
             {
-                "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDI5NzA0JTI2cHJvZHVjdF9pZCUzRDEwMTU1ODUlMjIlMkMlMjJfaW5kZXglMjIlM0ExJTJDJTIyc3ViUHJvZHVjdElkJTIyJTNBNTAyOTcwNSU3RA==",
+                "trace_meta":"JTdCJTIyX3VyaSUyMiUzQSUyMiUyRmluZm8lMkZwcm9kdWN0X2RldGFpbC5qc29uJTIyJTJDJTIyX3F1ZXJ5JTIyJTNBJTIyc3ViX3Byb2R1Y3RfaWQlM0Q1MDgyOTgwJTI2cHJvZHVjdF9pZCUzRDEwMzkzNDQlMjIlMkMlMjJfaW5kZXglMjIlM0ExJTJDJTIyc3ViUHJvZHVjdElkJTIyJTNBNTA4Mjk4MSU3RA==",
                 "is_flash":false,
                 "is_promotion":false,
-                "name":"朴田泰式海鲜火锅（泛悦国际店）双人餐",
-                "origin_price":38800,
+                "name":"东方广场假日酒店蜀咖啡蚝虾啤酒夜单人自助晚餐",
                 "pass_info":[
 
                 ],
-                "price":32800,
+                "price":9800,
                 "sell_state":5,
-                "show_entity_name":"2位",
-                "spec":"尊享双人餐",
-                "sub_product_id":5029705
+                "show_entity_name":"位",
+                "spec":"蚝虾啤酒夜儿童自助",
+                "sub_product_id":5082981
             }
         ],
-        "sub_product_id":5029704
+        "sub_product_id":5082980
     }
 }
                   axios.post('/api/savedetail',pro)

@@ -9,10 +9,12 @@ import store from './vuex'
 import Carousel3d from 'vue-carousel-3d';
 import '@/base/cssBase.css'
 import '@/fontvue/iconfont.css'
+import 'swiper/dist/css/swiper.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 Vue.use(ElementUI);
 Vue.use(Carousel3d);
-
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -22,6 +24,7 @@ new Vue({
   components: { App, },
   template: '<App/>',
   ElementUI,
-  store
+  store,
+  
 
 })

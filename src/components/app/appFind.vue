@@ -75,6 +75,12 @@ export default {
 
 		})
 	},
+	  beforeRouteLeave (to, from, next) {
+		  	setTimeout(function(){
+		  		console.log('aaa')
+		  		next()
+		  	},2000)
+	    },
 	beforeCreate(){
 		axios.post('/api/initfindcarousel')
 			.then((res)=>{

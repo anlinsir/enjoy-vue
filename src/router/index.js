@@ -40,7 +40,7 @@ export default new Router({
         ,
         {path:'/index/find',component:BppFind}
         ,
-        {path:'/index/good',component:BppGood},
+       
 
 
         ],
@@ -72,7 +72,7 @@ export default new Router({
         path:'/details/:Id',
         name:"details",
         component:Details
-      },
+      }, {path:'/good',component:BppGood},
 
         
 

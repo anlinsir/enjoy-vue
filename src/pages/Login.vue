@@ -16,8 +16,8 @@
 
 				</div>
 
-				<button @click="login" class="loginBtn">登录</button>
-				
+				<button @click="LOGIN" v-loading.fullscreen.lock="fullscreenLoading" class="loginBtn">登录</button>
+				{{user}}
 			</div>
 
 		</div>
@@ -30,21 +30,39 @@
 
 
 <script>
+    import {mapState,mapGetters,mapMutations} from 'vuex'
+
 export default{
+	computed:{
+			//通过mapState（由vuex提供的辅助函数）
+			//和...对象（数组的扩展方法）这种简写方式
+			//相当于调用了msg(){return this.$store.state.msg}
+			//当仓库里的数据名和你再组件中显示的数据名相同时...mapState(['msg'])用这种对象语法
+			//当不是时
+			//用对象语法 自定义名：（这里的参数就是当前的state）=》{state.仓库中的数据名}
+			...mapState({
+				user:(state)=> state.user.user,
+
+
+			}),
+		},
+
 	data(){
 		return({
-			phone:"",
+			phone:"13980552337",
 			code:"",
 			alert:"err",
 			alertShow:false,
 			codebtn:true,
 			changecodebtntime:null,
-			codetime:20
+			codetime:20,
+			fullscreenLoading: false
 		})
 	},
 	methods:{
 		phoneChange(){},
-		login(){
+		LOGIN(){
+
 			/*判断没有输入时**********************************************************************/
 			if(!this.phone && !this.code){
 				this.alert = '请输入手机号和验证码'
@@ -81,7 +99,14 @@ export default{
 				console.log('t')				
 			}	
 			/*成功时*****/
-			this.$router.replace( {path:`/index/index${name}`, query:{ id:Math.ceil(Math.random()*100),name:"dsdsds",time:"dwn",user:this.code }})
+				this.fullscreenLoading = true;
+			        setTimeout(() => {
+			          this.fullscreenLoading = false;
+			          this.$store.commit('LOGIN',this.code)
+					 	localStorage.user = this.code
+					this.$router.replace( {path:`/index/index${name}`, query:{ id:Math.ceil(Math.random()*100),name:"dsdsds",time:"dwn",user:this.code }})
+			        }, 2000);
+			
 
 		},
 		changecodebtn(){
