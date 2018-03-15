@@ -183,7 +183,7 @@ export default {
 @keyframes bgchange
 {
 	0%{
-		background-color: #EDEDED;
+		background-color: #3B200C;
 	}
    20%{
    	background-color: #EDE387;
@@ -192,13 +192,13 @@ export default {
    	background-color: #CCFC62;
    }
    60%{
-   	background-color: #3B200C;
+   	background-color: #EDEDED;
    }
    80%{
    	background-color: #DE8100;
    }
    100%{
-   	background-color: #EDEDED;
+   	background-color: #3B200C;
    }
 }
 

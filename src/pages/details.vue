@@ -31,8 +31,8 @@
 		
 		<footer>
 			<ul class="footer_ul">
-				<li class="toCar"><i class="iconfont icon-gouwuche"></i></li>
-				<li class="addCar">加入购物车</li>
+				<li class="toCar"> <span class="bag">{{num | nums}}</span><i class="iconfont icon-gouwuche"></i></li>
+				<li class="addCar" @click="addProducts">加入购物车</li>
 				<li class="buyNow">即刻购买</li>
 			</ul>
 		</footer>
@@ -53,6 +53,11 @@ import {mdCard,mdCardMedia} from 'vue-awesome-swiper'
 				data:null,
 				bools:false
 				,
+				ID:null
+				,
+				num:0
+				,
+				saveData:localStorage.car,
 				 swiperOption: {
 				          pagination: {
 				            el: '.swiper-pagination',
@@ -61,12 +66,44 @@ import {mdCard,mdCardMedia} from 'vue-awesome-swiper'
 				        }
 			})
 		},
+		beforeRouteLeave (to, from, next) {
+			console.log(this.saveData)			
+			if(!this.saveData ){
+				next()
+			 return
+			}
+				var pro = JSON.parse(this.saveData)
+				pro = pro[0]
+			axios.post('/api/savecar',pro)
+				.then(function(res){
+					console.log(res)
+					next()
+				})
+
+			
+			//离开页面时保存local
+		},
+		/*beforeRouteEnter (to, from, next){
+			console.log(to)
+		}
+		,*/
 		beforeCreate(){
-			var pro = {id:this.$route.params.Id} 
+						var pro = {id:this.$route.params.Id} 
 			axios.post('/api/initdetail',pro).then((res)=>{
 				console.log(res.data.msg)
+				this.ID = res.data.msg.basic.sub_product_id
+				console.log(this.ID)
 				this.data = [res.data.msg]
 			})
+			var name = {name:localStorage.user}
+			axios.post('/api/findcar',name)
+				.then((res)=>{
+					console.log(res.data.msg)
+					var isuser = res.data.msg.filter(function(item){
+						return item.user == localStorage.user 
+					})
+					this.num = isuser[0].peo.length
+				})
 		},
 		mounted(){
 
@@ -82,7 +119,77 @@ import {mdCard,mdCardMedia} from 'vue-awesome-swiper'
 			},
 			classActive(){
 				this.bools = !this.bools
+			},
+			addProducts(){
+				  //增加商品种类的的数量商品数量的数量不在这里定义 
+				if(!localStorage.user){//如果没有用户名就跳转到login
+					this.$router.push('/login')
+					return
+					localStorage.removeItem('car')
+				}
+				var _pro = localStorage.car?JSON.parse(localStorage.car):[]
+				//如果localStorage.user == _pro中的一项的user 就增加 ——pro[i].peo
+				//离开时存到数据库里 把local删除
+				if(_pro.length != 0){
+						for(var  i=0;i<=_pro.length;i++){							
+							/********************************/
+							if(_pro[i].user == localStorage.user){
+							/********************************/		
+									for(var j = 0 ; j<_pro[i].peo.length;j++){//在判断——pro.peo的每一项的id  是否与this.id相等
+											if(_pro[i].peo[j].ID == this.ID){
+												_pro[i].peo[j].sum +=1
+
+												localStorage.setItem('car',JSON.stringify(_pro))
+												this.saveData = localStorage.car
+
+								 				console.log(_pro,localStorage.car,this.saveData)
+
+												return
+											}
+									}
+							/********************************/		
+								this.num +=1
+								_pro[i].peo.push({ID:this.ID,sum:1})
+								
+								localStorage.setItem('car',JSON.stringify(_pro))
+								this.saveData = localStorage.car
+					 				console.log(_pro,localStorage.car,this.saveData)
+
+								return
+							}
+
+
+
+					}
+
+
+				}
+
+
+				this.num +=1
+
+				_pro.push({peo:[{ID:this.ID,sum:1}],user:localStorage.user})
+				
+				localStorage.setItem('car',JSON.stringify(_pro))
+				this.saveData = localStorage.car
+				console.log(_pro,localStorage.car,this.saveData)
+
+				
+									
+				
+				
+
+
 			}
+		},
+		filters: {
+			  nums(num){
+			  		if(num>=0&&num<=99){
+			  			return num 
+			  		}else{
+			  			return num = 99+'+'
+			  		}
+			  },
 		}
 	}
 
@@ -189,8 +296,23 @@ import {mdCard,mdCardMedia} from 'vue-awesome-swiper'
 				>.toCar{
 					color: black;
 					width: 20%;
+					position: relative;
 					>.icon-gouwuche:before{
 						font-size:10.5vw;
+					}
+					>.bag{
+						position: absolute;
+						top: 2vw;
+						right: 3vw;
+						background-color: red;
+						color: white;
+						display: inline-block;
+						font-size: 3vw;
+						width: 5vw;
+						text-align: center;
+						line-height: 5vw;
+						border-radius: 50%;
+						height: 5vw;
 					}
 				}
 				>.addCar{
