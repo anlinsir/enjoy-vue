@@ -16,7 +16,7 @@ Vue.use(ElementUI);
 Vue.use(Carousel3d);
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.config.productionTip = false
-
+//dslkdniscnoi
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
