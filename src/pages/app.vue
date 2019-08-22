@@ -2,7 +2,7 @@
 	<div class="bppWarp" >
 		<Header @getuser='getuser' @gitcitydata="getcitydata" :incl='incl' @target='target'/>	
 			<router-view />
-			
+			dsdsdsds
 		<footer>
 			<ul>
 				<li v-for='(val,key,index) in indexRouter'>
