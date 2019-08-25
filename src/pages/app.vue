@@ -12,6 +12,7 @@
 				
 
 			</ul>
+			dhgshdgkjcfjifuifyhusdfvyhusdfvhjkujikBJKJILxolfiefjkledfjkld
 
 		</footer>
 	</div>
@@ -69,7 +70,9 @@ export default {
 <style scoped >
 	
 	/* header{
-		height: 11.73vw;
+		height: 11.73vw;jnkghjtydrtgfll
+
+		
 		background-color: #1b1818;
 		color: #f5f5f5;
 		font-size: 4vw;
