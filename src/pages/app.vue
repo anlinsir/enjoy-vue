@@ -12,9 +12,8 @@
 
 				<li><router-link :to="user?`/my/${user}`:'/login'"><i class="el-icon-news"></i></router-link></li>
 				
-
 			</ul>
-
+dsdslkdhskdnskdshjsvbdjbio
 		</footer>
 	</div>
 		
